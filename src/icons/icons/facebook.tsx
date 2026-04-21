@@ -6,15 +6,18 @@ import type { SVGProps } from "react";
 export function FacebookIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      color="currentColor"
       xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 16 16"
+      id="facebook"
+      className="p-1"
       {...props}
     >
-      <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+      <path
+        fill="#1976D2"
+        fillRule="evenodd"
+        d="M12 5.5H9v-2a1 1 0 0 1 1-1h1V0H9a3 3 0 0 0-3 3v2.5H4V8h2v8h3V8h2l1-2.5z"
+        clipRule="evenodd"
+      ></path>
     </svg>
   );
 }

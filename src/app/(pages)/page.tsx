@@ -1,27 +1,52 @@
-"use client";
-import { Contact } from "@/components/views/home/contactSection";
-import { FAQ } from "@/components/views/home/faqSection";
-import { Features } from "@/components/views/home/featureSection";
-import { Gallery } from "@/components/views/home/gallerySection";
-import { Hero } from "@/components/views/home/heroSection";
-import { Projects } from "@/components/views/home/projectSection";
-import { Services } from "@/components/views/home/servicesSection";
-import { Spots } from "@/components/views/home/spotsSection";
-import { Team } from "@/components/views/home/teamSection";
+import HomeView from "@/components/views/home/homeView";
+import {
+  breadcrumbJsonLd,
+  buildMetadata,
+  faqJsonLd,
+  PAGE_SEO,
+  webPageJsonLd,
+} from "@/lib/seo";
+import { faqs } from "@/utils/constant";
+import { Metadata } from "next";
+import Script from "next/script";
+
+export const metadata: Metadata = buildMetadata(PAGE_SEO.home);
 
 //
 export default function HomePage() {
   return (
     <div className="font-[Roboto,sans-serif] text-[#000810] bg-white overflow-x-hidden">
-      <Hero />
-      <Services />
-      <Projects />
-      <Spots />
-      <Features />
-      <Team />
-      <FAQ />
-      <Gallery />
-      <Contact />
+      <HomeView />
+      <Script
+        id="json-ld-homepage"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(webPageJsonLd(PAGE_SEO.home)),
+        }}
+      />
+
+      {/* FAQ structured data — homepage has FAQ section */}
+      <Script
+        id="json-ld-faq-home"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqJsonLd(faqs)),
+        }}
+      />
+
+      {/* Breadcrumb */}
+      <Script
+        id="json-ld-breadcrumb-home"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbJsonLd([{ label: "Home", href: "/" }]),
+          ),
+        }}
+      />
     </div>
   );
 }

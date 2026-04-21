@@ -8,10 +8,10 @@ import {
 
 // Navigation Items
 export const navItems: INavItemList[] = [
-  { label: "About", href: "#" },
-  { label: "Services", href: "#" },
-  { label: "Projects", href: "#" },
-  { label: "Contacts", href: "#" },
+  { label: "About", href: "/about" },
+  { label: "Services", href: "/services" },
+  { label: "Projects", href: "/projects" },
+  { label: "Contacts", href: "/contact" },
 ];
 
 // Services List
@@ -138,4 +138,77 @@ export const galleryItems = [
   "Fresh Concept Construction Renovation",
   "Fresh Concept Construction Renovation",
   "Fresh Concept Construction Renovation",
+];
+
+// Page Hero Content
+export const PAGE_HEROES = {
+  about: {
+    subtitle: "Building communities",
+    title: "About",
+    breadcrumbs: [{ label: "Home", href: "/" }, { label: "About" }],
+  },
+  services: {
+    subtitle: "Building communities",
+    title: "Services",
+    breadcrumbs: [{ label: "Home", href: "/" }, { label: "Services" }],
+  },
+  singleService: {
+    subtitle: "Single service",
+    title: "Electrical Engineering",
+    breadcrumbs: [
+      { label: "Home", href: "/" },
+      { label: "Services", href: "/services" },
+      { label: "Electrical Engineering" },
+    ],
+  },
+  projects: {
+    subtitle: "Building communities",
+    title: "Our Projects",
+    breadcrumbs: [{ label: "Home", href: "/" }, { label: "Our Projects" }],
+  },
+  contact: {
+    subtitle: "Build relationships",
+    title: "Contacts",
+    breadcrumbs: [{ label: "Home", href: "/" }, { label: "Contacts" }],
+  },
+};
+
+// Service List
+export const SERVICES = [
+  {
+    n: "01",
+    title: "Process Engineering",
+    desc: "Senectus et netus et malesuada. Nunc pulvinar sapien et ligula ullamcorper malesuada proin.",
+    href: "/services/single-service",
+  },
+  {
+    n: "02",
+    title: "Construction Services",
+    desc: "Donec adipiscing tristique risus nec feugiat in. Porttitor massa id neque aliquam vestibulum morbi.",
+    href: "/services/single-service",
+  },
+  {
+    n: "03",
+    title: "Civil Engineering",
+    desc: "Morbi tincidunt ornare massa eget egestas purus viverra blandit elementum cursus risus.",
+    href: "/services/single-service",
+  },
+  {
+    n: "04",
+    title: "Electrical Engineering",
+    desc: "Ac tortor vitae purus faucibus ornare suspendisse sed nisi lacus. Nam aliquam sem et tortor.",
+    href: "/services/single-service",
+  },
+  {
+    n: "05",
+    title: "Chemistry and Metallurgy",
+    desc: "Mollis nunc sed id semper. Sodales ut etiam sit amet nisl purus. Sed odio morbi quis commodo odio.",
+    href: "/services/single-service",
+  },
+  {
+    n: "06",
+    title: "Specialty Services",
+    desc: "Tellus elementum sagittis vitae et. Amet justo donec enim diam vulputate ut consequat id porta nibh.",
+    href: "/services/single-service",
+  },
 ];
