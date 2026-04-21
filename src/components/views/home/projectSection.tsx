@@ -1,43 +1,47 @@
-import { ArrowLink } from "@/components/reusable/arrowLink";
 import { SectionLabel } from "@/components/reusable/sectionLabel";
+import { projectsContent } from "@/contents/homePage";
 import { LocationPinIcon } from "@/icons";
-import { projects } from "@/utils/constant";
 
 export function Projects() {
   return (
     <section className="bg-[#001f3f] text-white py-20 lg:py-45">
       <div className="max-w-322.5 mx-auto px-5">
         <div className="mb-8 md:mb-10">
-          <SectionLabel light>What we do</SectionLabel>
+          <SectionLabel light>{projectsContent.label}</SectionLabel>
+
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-black font-['Archivo',sans-serif]">
-            Our <span className="text-[#ffc631]">Projects</span>
+            {projectsContent.titleOne}{" "}
+            <span className="text-[#ffc631]">
+              {projectsContent.titleHighlight}
+            </span>
           </h2>
         </div>
+
         <ul className="grid gap-10 sm:grid-cols-2 lg:gap-[60px_40px]">
-          {projects.map((p, i) => (
-            <li key={i} className="flex flex-col">
-              {/* Image placeholder */}
+          {projectsContent.projects.map((p, i) => (
+            <li key={p.id} className="flex flex-col">
+              {/* Image */}
               <div className="aspect-625/500 bg-[#0a2a4d] overflow-hidden mb-5 relative group">
                 <div className="absolute inset-0 bg-linear-to-br from-[#ffc631]/10 to-[#001f3f]/60 group-hover:scale-110 transition-transform duration-500" />
+
                 <div className="absolute inset-0 flex items-center justify-center text-[#ffc631]/30 text-6xl font-black font-['Archivo',sans-serif]">
                   {String(i + 1).padStart(2, "0")}
                 </div>
               </div>
-              {/* Title with line */}
+
+              {/* Title */}
               <div className="flex-1 flex flex-col pb-4 mb-4 relative border-b border-[#a9a9a9]">
                 <h3 className="text-xl font-bold font-['Archivo',sans-serif]">
                   {p.title}
                 </h3>
               </div>
+
               {/* Info */}
               <div className="flex sm:flex-row flex-col sm:items-center justify-between gap-3">
                 <span className="flex items-center gap-2 text-sm">
                   <LocationPinIcon className="w-5 h-5 text-[#ffc631] shrink-0" />
-                  {p.loc}
+                  {p.location}
                 </span>
-                <ArrowLink href="#" alt>
-                  Details
-                </ArrowLink>
               </div>
             </li>
           ))}

@@ -1,9 +1,11 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 //
 import { navItems } from "@/utils/constant";
 import { ChevronRightIcon, CrossIcon, MenuIcon } from "@/icons";
+import { headerContent } from "@/contents/header";
 
 //
 export function Header() {
@@ -25,18 +27,20 @@ export function Header() {
     >
       <div className="max-w-322.5 mx-auto px-5 flex items-center justify-between">
         {/* Brand */}
-        <a
-          href="#"
+        <Link
+          href="/"
           className="inline-flex items-center gap-2.5 text-white font-bold text-xl font-['Archivo',sans-serif]"
         >
-          {/* Logo placeholder */}
           <span className="w-8 h-8 bg-[#ffc631] rounded-sm flex items-center justify-center text-[#001f3f] font-black text-xs">
-            AC
+            {headerContent.companyName}
           </span>
           <span>
-            Axial <span className="text-[#0da574]">Construct</span>
+            {headerContent.companyName}{" "}
+            <span className="text-[#0da574]">
+              {headerContent.companySubname}
+            </span>
           </span>
-        </a>
+        </Link>
 
         {/* Desktop nav */}
         <nav className="hidden lg:block">
