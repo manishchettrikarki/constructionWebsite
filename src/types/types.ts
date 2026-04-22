@@ -19,6 +19,7 @@ export interface IProjectListItem {
 export interface IFeatureListItem {
   title: string;
   description: string;
+  icon: React.ElementType;
 }
 
 export interface IFAQItem {

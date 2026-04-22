@@ -10,3 +10,8 @@ export * from "./icons/minus";
 export * from "./icons/plus";
 export * from "./icons/twitterIcon";
 export * from "./icons/whatapp";
+export * from "./icons/building";
+export * from "./icons/hammer";
+export * from "./icons/sheldCheck";
+export * from "./icons/workforce";
+export * from "./icons/wrench";

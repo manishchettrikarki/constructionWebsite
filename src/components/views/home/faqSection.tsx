@@ -1,5 +1,6 @@
 import { Btn } from "@/components/reusable/button";
 import { SectionLabel } from "@/components/reusable/sectionLabel";
+import { faqContent } from "@/contents/homePage";
 import { MinusIcon } from "@/icons/icons/minus";
 import { PlusIcon } from "@/icons/icons/plus";
 import { faqs } from "@/utils/constant";
@@ -8,20 +9,20 @@ import { useState } from "react";
 export function FAQ() {
   const [open, setOpen] = useState(0);
   return (
-    <section className="pt-20 lg:pt-45">
+    <section className="py-20 lg:pt-45">
       <div className="max-w-322.5 mx-auto px-5 flex flex-col lg:flex-row gap-12 lg:gap-15">
         {/* Header */}
         <div className="lg:max-w-95 lg:mt-36">
-          <SectionLabel>Dealing with your worries</SectionLabel>
+          <SectionLabel>{faqContent.label}</SectionLabel>
           <h2 className="text-3xl md:text-4xl font-black font-['Archivo',sans-serif] mt-2 mb-4">
-            If Your Question Is Not Here{" "}
+            {faqContent.titleOne}{" "}
+            <span className="text-[#0da574]">{faqContent.titleTwo}</span>
             <span className="text-[#0da574]">Contact Us</span>
           </h2>
           <p className="text-[#162739] leading-relaxed mb-6">
-            Porttitor rhoncus dolor purus non enim praesent elementum facilisis.
-            Nisi scelerisque eu ultrices vitae auctor eu augue ut lectus
+            {faqContent.description}
           </p>
-          <Btn href="#">Contact Us</Btn>
+          <Btn href={faqContent.cta.href}>{faqContent.cta.label}</Btn>
         </div>
 
         {/* Accordion */}

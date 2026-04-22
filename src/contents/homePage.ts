@@ -100,7 +100,7 @@ export const projectsContent = {
       id: 1,
       title: "Modern Residential Complex",
       location: "Kathmandu, Nepal",
-      image: "/images/projects/p1.jpg",
+      image: "/images/projects/p1.avif",
       href: "/projects/modern-residential-complex",
     },
     {
@@ -114,15 +114,83 @@ export const projectsContent = {
       id: 3,
       title: "Bridge Infrastructure Project",
       location: "Pokhara, Nepal",
-      image: "/images/projects/p3.jpg",
+      image: "/images/projects/p3.webp",
       href: "/projects/bridge-infrastructure",
     },
     {
       id: 4,
       title: "Highway Expansion Work",
       location: "Chitwan, Nepal",
-      image: "/images/projects/p4.jpg",
+      image: "/images/projects/p4.webp",
       href: "/projects/highway-expansion",
     },
   ],
+};
+
+// Spot Section
+export const spotsContent = {
+  label: "Where we work",
+  titleOne: "Our Projects",
+  titleTwo: "Across Nepal",
+
+  description:
+    "XYZ Company has successfully delivered civil and structural engineering projects across major cities of Nepal. From residential housing in Kathmandu to commercial and infrastructure work in Pokhara and beyond, we focus on quality, safety, and earthquake-resistant design.",
+
+  stats: [
+    {
+      value: "200+",
+      label: "Projects Completed Across Nepal",
+    },
+    {
+      value: "99%",
+      label: "Client Satisfaction Rate",
+    },
+  ],
+
+  cta: {
+    label: "About Company",
+    href: "/about",
+  },
+
+  // Nepal locations (approx positions for map)
+  locations: [
+    { name: "Kathmandu", x: 55, y: 58 },
+    // { name: "Pokhara", x: 38, y: 50 },
+    // { name: "Lalitpur", x: 53, y: 47 },
+    // { name: "Bhaktapur", x: 55, y: 44 },
+    { name: "Biratnagar", x: 75, y: 75 },
+    // { name: "Butwal", x: 45, y: 65 },
+    // { name: "Dharan", x: 72, y: 50 },
+  ],
+};
+
+// feature section
+export const featuresContent = {
+  label: "Why Choose Us",
+
+  title: {
+    highlight: "Building",
+    rest: "Nepal with Excellence",
+  },
+
+  checklist: [
+    "Seismic-resistant structural design",
+    "Experienced civil & site engineering team",
+    "Reliable and cost-effective construction solutions",
+  ],
+};
+
+// FAQ Section
+// contents/homePage.ts
+
+export const faqContent = {
+  label: "Dealing with your worries",
+  titleOne: "If Your Question Is Not Here",
+  titleTwo: "Contact Us",
+  description:
+    "We understand that construction projects can raise many questions. Our team at XYZ Construction is here to guide you through every step—from planning to execution.",
+  cta: {
+    label: "Contact Us",
+    href: "/contact",
+  },
 };

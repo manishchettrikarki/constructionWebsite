@@ -2,12 +2,12 @@
 // import { Contact } from "./contactSection";
 import { FAQ } from "./faqSection";
 import { Features } from "./featureSection";
-import { Gallery } from "./gallerySection";
+// import { Gallery } from "./gallerySection";
 import { Hero } from "./heroSection";
 import { Projects } from "./projectSection";
 import { Services } from "./servicesSection";
 import { Spots } from "./spotsSection";
-import { Team } from "./teamSection";
+// import { Team } from "./teamSection";
 
 export default function HomeView() {
   return (
@@ -17,9 +17,9 @@ export default function HomeView() {
       <Projects />
       <Spots />
       <Features />
-      <Team />
+      {/* <Team /> */}
       <FAQ />
-      <Gallery />
+      {/* <Gallery /> */}
       {/* <Contact /> */}
     </>
   );

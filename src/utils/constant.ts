@@ -1,4 +1,11 @@
 import {
+  BuildingIcon,
+  HammerIcon,
+  SheldCheckIcon,
+  WorkforceIcon,
+  WrenchIcon,
+} from "@/icons";
+import {
   IFAQItem,
   IFeatureListItem,
   INavItemList,
@@ -81,54 +88,62 @@ export const projects: IProjectListItem[] = [
 // Features List
 export const features: IFeatureListItem[] = [
   {
-    title: "We Develop Unique Projects",
+    title: "Structural Engineering",
     description:
-      "Senectus et netus et malesuada. Nunc pulvinar sapien et ligula ullamcorper malesuada proin",
+      "Advanced structural solutions for residential and commercial projects across Kathmandu.",
+    icon: BuildingIcon,
   },
   {
-    title: "We Value Convenience and Functionality",
+    title: "Construction Management",
     description:
-      "Magnis dis parturient montes nascetur ridiculus mus mauris vitae ultricies",
+      "Efficient planning and execution ensuring timely and cost-effective delivery.",
+    icon: HammerIcon,
   },
   {
-    title: "Experience Allows Us to Implement Ideas",
+    title: "Quality Assurance",
     description:
-      "Viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat. Enim diam vulputate ut pharetra",
+      "Strict quality control aligned with Nepal building standards.",
+    icon: SheldCheckIcon,
   },
   {
-    title: "We Offer Innovative Technologies",
+    title: "Skilled Workforce",
     description:
-      "Consectetur adipiscing elit pellentesque habitant. Arcu felis bibendum ut tristique",
+      "Experienced engineers and technicians dedicated to excellence.",
+    icon: WorkforceIcon,
   },
   {
-    title: "We Focus on Long-term Relationships",
-    description:
-      "Purus in massa tempor nec feugiat. Euismod lacinia at quis risus sed vulputate",
+    title: "Maintenance & Support",
+    description: "Reliable post-construction support and maintenance services.",
+    icon: WrenchIcon,
   },
 ];
 
 // FAQ list
 export const faqs: IFAQItem[] = [
   {
-    question: "Where is Company Located?",
+    question: "Do you provide services outside Kathmandu?",
     answer:
-      "Condimentum id venenatis a condimentum vitae sapien pellentesque habitant. Non quam lacus suspendisse faucibus interdum posuere lorem. Ut diam quam nulla porttitor.",
-    open: true,
+      "Yes, XYZ Construction operates across Kathmandu Valley and extends services to major cities like Pokhara, Chitwan, and Butwal depending on project scale.",
   },
   {
-    question: "What is a Structural Engineer?",
+    question: "What types of projects do you handle?",
     answer:
-      "Condimentum id venenatis a condimentum vitae sapien pellentesque habitant. Non quam lacus suspendisse faucibus interdum posuere lorem. Ut diam quam nulla porttitor massa id neque aliquam vestibulum.",
+      "We specialize in residential buildings, commercial complexes, renovation works, and structural design projects tailored to Nepal’s building codes.",
   },
   {
-    question: "What are the Service Provided by Company?",
+    question: "How long does a typical house construction take?",
     answer:
-      "Condimentum id venenatis a condimentum vitae sapien pellentesque habitant. Non quam lacus suspendisse faucibus interdum posuere lorem. Ut diam quam nulla porttitor massa id neque.",
+      "A standard residential house in Kathmandu usually takes 8–14 months depending on design complexity, site conditions, and approvals.",
   },
   {
-    question: "How Long Does It Take to Build a House?",
+    question: "Do you assist with municipality approvals?",
     answer:
-      "Condimentum id venenatis a condimentum vitae sapien pellentesque habitant. Non quam lacus suspendisse faucibus interdum posuere lorem. Ut diam quam nulla porttitor massa id.",
+      "Yes, we handle all necessary approvals including Kathmandu Metropolitan permits, structural drawings, and compliance documentation.",
+  },
+  {
+    question: "Can I get a cost estimate before starting?",
+    answer:
+      "Absolutely. We provide detailed cost estimation and BOQ (Bill of Quantities) after understanding your requirements and site conditions.",
   },
 ];
 

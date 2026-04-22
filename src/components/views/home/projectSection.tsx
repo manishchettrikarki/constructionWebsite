@@ -1,6 +1,7 @@
 import { SectionLabel } from "@/components/reusable/sectionLabel";
 import { projectsContent } from "@/contents/homePage";
 import { LocationPinIcon } from "@/icons";
+import Image from "next/image";
 
 export function Projects() {
   return (
@@ -10,7 +11,7 @@ export function Projects() {
           <SectionLabel light>{projectsContent.label}</SectionLabel>
 
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-black font-['Archivo',sans-serif]">
-            {projectsContent.titleOne}{" "}
+            {projectsContent.titleOne}
             <span className="text-[#ffc631]">
               {projectsContent.titleHighlight}
             </span>
@@ -19,14 +20,18 @@ export function Projects() {
 
         <ul className="grid gap-10 sm:grid-cols-2 lg:gap-[60px_40px]">
           {projectsContent.projects.map((p, i) => (
-            <li key={p.id} className="flex flex-col">
+            <li key={i} className="flex flex-col">
               {/* Image */}
-              <div className="aspect-625/500 bg-[#0a2a4d] overflow-hidden mb-5 relative group">
-                <div className="absolute inset-0 bg-linear-to-br from-[#ffc631]/10 to-[#001f3f]/60 group-hover:scale-110 transition-transform duration-500" />
+              <div className="aspect-625/500 overflow-hidden mb-5 relative group">
+                <Image
+                  src={p.image}
+                  alt={p.title}
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                />
 
-                <div className="absolute inset-0 flex items-center justify-center text-[#ffc631]/30 text-6xl font-black font-['Archivo',sans-serif]">
-                  {String(i + 1).padStart(2, "0")}
-                </div>
+                {/* Optional dark overlay for readability */}
+                <div className="absolute inset-0 bg-linear-to-t from-[#001f3f]/70 via-transparent to-transparent" />
               </div>
 
               {/* Title */}
