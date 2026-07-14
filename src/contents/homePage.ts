@@ -1,10 +1,10 @@
 // Herosection contents
 export const heroContent = {
-  title: "Professional. Innovative. Reliable.",
-  subtitleOne: "Exceptional Service",
-  subtitleTwo: "Exceeding Expectations",
+  title: "Engineering Excellence Since 2074 B.S.",
+  subtitleOne: "Complete Engineering Solutions",
+  subtitleTwo: "For a Sustainable Nepal",
   description:
-    "Our civil and structural team is committed to providing sustainable, creative & efficient engineering solutions for our communities.",
+    "From planning and feasibility studies to detailed design, survey and project supervision — Kallisto Engineering Consultancy delivers trusted, multi-disciplinary engineering solutions across Nepal.",
   ctaPrimary: {
     label: "Consult Now",
     href: "/contact",
@@ -15,18 +15,18 @@ export const heroContent = {
   },
   counters: {
     projectsPerYear: {
-      label: "Projects / Year",
-      value: 128,
+      label: "Completed Projects",
+      value: 24,
     },
     turnover2020: {
-      label: "Valued clients",
-      value: 425,
+      label: "Expert Team Members",
+      value: 14,
     },
   },
   floatingCard: {
-    title: "Residental House",
-    area: "78000 m²",
-    workDone: "Amount of work done",
+    title: "Dudhuwa Khola Bridge",
+    area: "70m Span",
+    workDone: "Detailed design & DPR completed",
     details: "Details",
   },
 };
@@ -41,88 +41,88 @@ export const servicesContent = {
     {
       id: 1,
       number: "01",
-      title: "Structural Engineering",
+      title: "Engineering & Architectural Consultancy",
       description:
-        "We deliver safe, efficient and innovative structural designs tailored to modern construction needs.",
-      href: "/services/structural-engineering",
+        "Planning, feasibility studies, detailed design, supervision and management of engineering and architectural projects.",
+      href: "/services/engineering-consultancy",
     },
     {
       id: 2,
       number: "02",
-      title: "Civil Engineering",
+      title: "Transportation Engineering",
       description:
-        "End-to-end civil engineering solutions for infrastructure, roads, and urban development projects.",
-      href: "/services/civil-engineering",
+        "Highways, roads, bridges, airports, railways and metro infrastructure planning and design.",
+      href: "/services/transportation-engineering",
     },
     {
       id: 3,
       number: "03",
-      title: "Project Management",
+      title: "Hydropower & Energy",
       description:
-        "Professional supervision and management ensuring timely and cost-effective project delivery.",
-      href: "/services/project-management",
+        "Feasibility and engineering studies for hydropower development and energy infrastructure.",
+      href: "/services/hydropower-energy",
     },
     {
       id: 4,
       number: "04",
-      title: "Architecture Design",
+      title: "Water Supply & Urban Development",
       description:
-        "Modern architectural concepts focused on functionality, sustainability, and aesthetics.",
-      href: "/services/architecture",
+        "Design and management of water supply, sanitation, wastewater and urban infrastructure systems.",
+      href: "/services/water-urban-development",
     },
     {
       id: 5,
       number: "05",
-      title: "Consulting Services",
+      title: "Environmental & Social Studies",
       description:
-        "Expert advisory services for planning, feasibility studies, and engineering decisions.",
-      href: "/services/consulting",
+        "EIA, IEE, geological investigations, and socio-economic and rural community development studies.",
+      href: "/services/environmental-social-studies",
     },
     {
       id: 6,
       number: "06",
-      title: "Site Supervision",
+      title: "Water Resources, Survey & GIS",
       description:
-        "On-site monitoring and quality control to ensure compliance with engineering standards.",
-      href: "/services/site-supervision",
+        "Irrigation, river basin planning, DGPS/topographic survey, GIS mapping and project management.",
+      href: "/services/water-resources-survey-gis",
     },
   ],
 };
 
 // Projects Section
 export const projectsContent = {
-  label: "What we do",
-  titleOne: "Our",
+  label: "Our work",
+  titleOne: "Featured",
   titleHighlight: "Projects",
 
   projects: [
     {
       id: 1,
-      title: "Modern Residential Complex",
-      location: "Kathmandu, Nepal",
+      title: "Kathmandu-Terai/Madhesh Expressway Road Project",
+      location: "Government of Nepal, Nepalese Army",
       image: "/images/projects/p1.avif",
-      href: "/projects/modern-residential-complex",
+      href: "/projects",
     },
     {
       id: 2,
-      title: "Commercial Tower Development",
-      location: "Lalitpur, Nepal",
+      title: "Dudhuwa Khola Bridge (70m)",
+      location: "Government of Nepal, Dudhuwa Rural Municipality",
       image: "/images/projects/p2.jpg",
-      href: "/projects/commercial-tower",
+      href: "/projects",
     },
     {
       id: 3,
-      title: "Bridge Infrastructure Project",
-      location: "Pokhara, Nepal",
+      title: "Central Infectious Disease Hospital, Teku",
+      location: "Department of Urban Development and Building Construction",
       image: "/images/projects/p3.webp",
-      href: "/projects/bridge-infrastructure",
+      href: "/projects",
     },
     {
       id: 4,
-      title: "Highway Expansion Work",
-      location: "Chitwan, Nepal",
+      title: "Pokhara Wastewater Management Master Plan",
+      location: "Yachiyo Engineering Co., Japan / JICA",
       image: "/images/projects/p4.webp",
-      href: "/projects/highway-expansion",
+      href: "/projects",
     },
   ],
 };
@@ -130,20 +130,20 @@ export const projectsContent = {
 // Spot Section
 export const spotsContent = {
   label: "Where we work",
-  titleOne: "Our Projects",
-  titleTwo: "Across Nepal",
+  titleOne: "Engineering Nepal",
+  titleTwo: "One Project at a Time",
 
   description:
-    "XYZ Company has successfully delivered civil and structural engineering projects across major cities of Nepal. From residential housing in Kathmandu to commercial and infrastructure work in Pokhara and beyond, we focus on quality, safety, and earthquake-resistant design.",
+    "Kallisto Engineering Consultancy has delivered planning, design, survey and supervision services across Nepal — from road and bridge projects in Banke and the Terai to hospital design in Kathmandu and wastewater planning in Pokhara. Our multidisciplinary team brings engineering, environmental and social expertise to every project we undertake.",
 
   stats: [
     {
-      value: "200+",
-      label: "Projects Completed Across Nepal",
+      value: "31+",
+      label: "Projects Undertaken Nationwide",
     },
     {
-      value: "99%",
-      label: "Client Satisfaction Rate",
+      value: "24",
+      label: "Projects Successfully Completed",
     },
   ],
 
@@ -154,13 +154,10 @@ export const spotsContent = {
 
   // Nepal locations (approx positions for map)
   locations: [
-    { name: "Kathmandu", x: 55, y: 58 },
-    // { name: "Pokhara", x: 38, y: 50 },
-    // { name: "Lalitpur", x: 53, y: 47 },
-    // { name: "Bhaktapur", x: 55, y: 44 },
-    { name: "Biratnagar", x: 75, y: 75 },
-    // { name: "Butwal", x: 45, y: 65 },
-    // { name: "Dharan", x: 72, y: 50 },
+    { name: "Kathmandu", x: 55, y: 52 },
+    { name: "Pokhara", x: 40, y: 50 },
+    { name: "Banke", x: 20, y: 60 },
+    { name: "Chitwan", x: 38, y: 58 },
   ],
 };
 
@@ -169,14 +166,14 @@ export const featuresContent = {
   label: "Why Choose Us",
 
   title: {
-    highlight: "Building",
-    rest: "Nepal with Excellence",
+    highlight: "Integrated",
+    rest: "Engineering Under One Roof",
   },
 
   checklist: [
-    "Seismic-resistant structural design",
-    "Experienced civil & site engineering team",
-    "Reliable and cost-effective construction solutions",
+    "Licensed engineers, surveyors & environmental experts",
+    // "Government, donor & private sector project experience",
+    // "Complete lifecycle support from survey to supervision",
   ],
 };
 
@@ -185,10 +182,10 @@ export const featuresContent = {
 
 export const faqContent = {
   label: "Dealing with your worries",
-  titleOne: "If Your Question Is Not Here",
-  titleTwo: "Contact Us",
+  titleOne: "Still Have a Question?",
+  titleTwo: "Get in Touch",
   description:
-    "We understand that construction projects can raise many questions. Our team at XYZ Construction is here to guide you through every step—from planning to execution.",
+    "Engineering projects can raise many questions — from feasibility to approvals. Our team at Kallisto Engineering Consultancy is here to guide you through every step, from planning to execution.",
   cta: {
     label: "Contact Us",
     href: "/contact",

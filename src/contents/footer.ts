@@ -1,17 +1,18 @@
 export const footerContent = {
   brand: {
-    short: "XYZ",
-    name: "XYZ",
-    highlight: "Construct",
+    short: "KEC",
+    name: "Kallisto",
+    highlight: "Engineering",
     description:
-      "Based in Kathmandu, XYZ Construct delivers reliable civil and structural engineering solutions across Nepal. We specialize in residential, commercial, and seismic-resistant construction.",
+      "Based in Mid-Baneshwor, Kathmandu, Kallisto Engineering Consultancy delivers planning, design, survey and project management solutions across Nepal — spanning transportation, hydropower, water resources and urban development.",
     href: "/",
+    logo: "images/logo.png",
   },
 
   contacts: {
     title: "Contact Us",
-    phones: ["+977-9800000000", "+977-9811111111"],
-    address: ["New Baneshwor, Kathmandu", "Bagmati Province, Nepal"],
+    phones: ["+977-1-4465553", "+977-9841666927"],
+    address: ["Mid-Baneshwor, Balbhadra Marg", "Kathmandu - 31, Nepal"],
   },
 
   companyLinks: [
@@ -24,30 +25,30 @@ export const footerContent = {
   newsletter: {
     title: "Stay Updated",
     description:
-      "Get updates on our latest construction projects, engineering insights, and offers in Nepal.",
+      "Get updates on our latest engineering projects, sector insights, and announcements from Kallisto Engineering Consultancy.",
     placeholder: "Enter your email",
   },
 
   socialLinks: [
     {
       label: "Facebook",
-      href: "https://facebook.com",
+      href: "https://facebook.com/kallistoengineering",
     },
     {
       label: "Instagram",
-      href: "https://instagram.com",
+      href: "https://instagram.com/kallistoengineering",
     },
     {
       label: "Twitter",
-      href: "https://twitter.com",
+      href: "https://twitter.com/kallistoeng",
     },
     {
       label: "WhatsApp",
-      href: "https://wa.me/9779800000000",
+      href: "https://wa.me/9779841666927",
     },
   ],
 
   copyright: {
-    text: "© XYZ Construct Pvt. Ltd.",
+    text: "© Kallisto Engineering Consultancy Pvt. Ltd.",
   },
 };

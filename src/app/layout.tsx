@@ -8,6 +8,7 @@ import {
   localBusinessJsonLd,
   websiteJsonLd,
 } from "@/lib/seo";
+import { ScrollPulleyLift } from "@/components/app/scrollPulleyLift";
 
 // ── Base metadata (overridden per-page) ──────────────────────
 export const metadata: Metadata = {
@@ -53,6 +54,8 @@ export default function RootLayout({
       </head>
       <body className="antialiased">
         {children}
+
+        <ScrollPulleyLift />
 
         <Script
           id="json-ld-org"

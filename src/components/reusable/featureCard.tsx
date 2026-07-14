@@ -11,7 +11,7 @@ export function FeatureCard({
   icon: Icon,
 }: IFeatureCardProps) {
   return (
-    <div className="border border-white/10 p-6 rounded-lg hover:border-[#ffc631] transition-colors">
+    <div className="border border-white/10 p-6 rounded-lg hover:border-[#ffc631] transition-colors h-full">
       <div className="mb-4">
         <Icon className="w-10 h-10 text-[#ffc631]" />
       </div>

@@ -29,16 +29,17 @@ export function Header() {
         {/* Brand */}
         <Link
           href="/"
-          className="inline-flex items-center gap-2.5 text-white font-bold text-xl font-['Archivo',sans-serif]"
+          className="inline-flex items-center gap-2.5 text-white font-semibold text-lg font-['Archivo',sans-serif]"
         >
-          <span className="w-8 h-8 bg-[#ffc631] rounded-sm flex items-center justify-center text-[#001f3f] font-black text-xs">
-            {headerContent.companyName}
+          <span className="w-12 h-12 rounded-sm flex items-center justify-center text-[#001f3f] font-black text-xs">
+            {/* {headerContent.companyName} */}
+            <img src={headerContent.logo} alt={headerContent.companyName} className="w-full h-full object-contain" />
           </span>
           <span>
             {headerContent.companyName}{" "}
-            <span className="text-[#0da574]">
+            {/* <span className="text-[#0da574]">
               {headerContent.companySubname}
-            </span>
+            </span> */}
           </span>
         </Link>
 

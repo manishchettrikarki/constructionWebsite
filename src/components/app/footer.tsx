@@ -20,8 +20,9 @@ export function Footer() {
               href="#"
               className="inline-flex items-center gap-2.5 font-bold text-xl font-['Archivo',sans-serif] mb-5"
             >
-              <span className="w-8 h-8 bg-[#ffc631] rounded-sm flex items-center justify-center text-[#001f3f] font-black text-xs">
-                {footerContent.brand.short}
+              <span className="w-12 h-12 rounded-sm flex items-center justify-center text-[#001f3f] font-black text-xs">
+                {/* {headerContent.companyName} */}
+                <img src={footerContent.brand.logo} alt={footerContent.brand.name} className="w-full h-full object-contain" />
               </span>
               {footerContent.brand.name}{" "}
               <span className="text-[#0da574]">

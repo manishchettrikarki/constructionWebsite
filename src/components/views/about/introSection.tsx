@@ -1,56 +1,39 @@
 "use client";
-import { Subtitle } from "@/components/reusable/subtitle";
-import Link from "next/link";
 
-const checklistItems = [
-  "Making lives easier",
-  "Get every solution right here",
-  "Innovation and creativity",
-  "Fine engineering only with us",
-];
+import Link from "next/link";
+import { Subtitle } from "@/components/reusable/subtitle";
+import { ArrowRightIcon, BuildingIcon } from "@/icons";
+import { ABOUT_INTRO } from "@/contents/aboutPage";
 
 export function AboutIntroSection() {
   return (
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* ── Left: text ── */}
+          {/* Left */}
           <div className="flex flex-col gap-6">
             <div>
-              <Subtitle>Who we are</Subtitle>
+              <Subtitle>{ABOUT_INTRO.subtitle}</Subtitle>
+
               <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1a1a2e] mt-1">
-                Bringing <span className="text-[#ffc631]">Your Ideas</span> and
-                Innovations to Life
+                {ABOUT_INTRO.title.normal}{" "}
+                <span className="text-[#ffc631]">
+                  {ABOUT_INTRO.title.highlight}
+                </span>
               </h2>
             </div>
+
             <p className="text-gray-500 leading-relaxed">
-              Our civil and structural team is committed to providing
-              sustainable, creative &amp; efficient engineering solutions for
-              our communities.
+              {ABOUT_INTRO.description}
             </p>
 
-            {/* Arrow checklist */}
             <ul className="flex flex-col gap-3">
-              {checklistItems.map((item) => (
+              {ABOUT_INTRO.checklist.map((item) => (
                 <li
                   key={item}
                   className="flex items-center gap-3 text-gray-700 text-sm font-medium"
                 >
-                  <span className="flex items-center justify-center w-5 h-5 shrink-0">
-                    <svg
-                      className="w-4 h-4 text-[#ffc631]"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth={2.5}
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M9 5l7 7-7 7"
-                      />
-                    </svg>
-                  </span>
+                  <ArrowRightIcon className="w-4 h-4 text-[#ffc631] shrink-0" />
                   {item}
                 </li>
               ))}
@@ -58,43 +41,30 @@ export function AboutIntroSection() {
 
             <div className="mt-2">
               <Link
-                href="/contact"
+                href={ABOUT_INTRO.button.href}
                 className="inline-block bg-[#ffc631] hover:bg-[#e6b22c] text-[#1a1a2e] font-bold px-8 py-3.5 rounded transition-colors duration-200"
               >
-                Consult Now
+                {ABOUT_INTRO.button.text}
               </Link>
             </div>
           </div>
 
-          {/* ── Right: image ── */}
+          {/* Right */}
           <div className="relative">
             <div className="w-full h-120 rounded-2xl overflow-hidden bg-gray-100 relative">
               <img
-                src="/img/about/01.jpg"
-                alt="About Us"
+                src={ABOUT_INTRO.image.src}
+                alt={ABOUT_INTRO.image.alt}
                 className="w-full h-full object-cover"
                 onError={(e) => {
                   (e.target as HTMLImageElement).style.display = "none";
                 }}
               />
-              {/* Fallback */}
+
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <svg
-                  className="w-32 h-32 text-gray-200"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={0.5}
-                    d="M3 21h18M3 7l9-4 9 4M4 7v14M20 7v14M8 11h2v5H8zm6 0h2v5h-2z"
-                  />
-                </svg>
+                <BuildingIcon className="w-16 h-16 text-gray-300" />
               </div>
 
-              {/* Gold accent bar */}
               <div className="absolute top-0 left-0 w-1.5 h-full bg-[#ffc631] rounded-l-2xl" />
             </div>
           </div>

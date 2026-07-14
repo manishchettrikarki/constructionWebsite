@@ -32,7 +32,7 @@ export default function ServicesPage() {
       <ServicesListSection />
       <ServicesNumbersSection />
       <ServicesExpertsSection />
-      <ServicesSkillsSection />
+      {/* <ServicesSkillsSection /> */}
       {/* <ServicesContactSection /> */}
 
       {/*  */}

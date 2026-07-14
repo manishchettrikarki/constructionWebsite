@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
-const SITE_NAME = "XYZ Construction Company";
-const SITE_TWITTER = "@xyzconstruct";
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.kallistoengineering.com";
+const SITE_NAME = "Kallisto Engineering Consultancy Pvt. Ltd.";
+const SITE_TWITTER = "@kallistoeng";
 const DEFAULT_OG_IMAGE = `${SITE_URL}/og/default.jpg`;
 
 // ─────────────────────────────────────────────────────────────
@@ -75,21 +76,23 @@ export function orgJsonLd() {
     contactPoint: [
       {
         "@type": "ContactPoint",
-        telephone: "+1-313-645-3395",
+        telephone: "+977-9841666927",
         contactType: "customer service",
-        areaServed: "US",
-        availableLanguage: "English",
+        areaServed: "NP",
+        availableLanguage: ["English", "Nepali"],
       },
     ],
     address: {
       "@type": "PostalAddress",
-      streetAddress: "2047 Cyrus Viaduct",
-      addressLocality: "East Jadynchester",
+      streetAddress: "Mid-Baneshwor, Balbhadra Marg",
+      addressLocality: "Kathmandu",
+      addressRegion: "Bagmati Province",
+      addressCountry: "NP",
     },
     sameAs: [
-      "https://www.facebook.com/xyzconstrutioncompany",
-      "https://www.instagram.com/xyzconstrutioncompany",
-      "https://twitter.com/xyzconstrutioncompany",
+      "https://www.facebook.com/kallistoengineering",
+      "https://www.instagram.com/kallistoengineering",
+      "https://twitter.com/kallistoeng",
     ],
   };
 }
@@ -103,19 +106,21 @@ export function localBusinessJsonLd() {
     name: SITE_NAME,
     image: DEFAULT_OG_IMAGE,
     url: SITE_URL,
-    telephone: "+1-313-645-3395",
-    email: "info@construct.com",
+    telephone: "+977-9841666927",
+    email: "kallistoengineering@gmail.com",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "2047 Cyrus Viaduct",
-      addressLocality: "East Jadynchester",
+      streetAddress: "Mid-Baneshwor, Balbhadra Marg",
+      addressLocality: "Kathmandu - 31",
+      addressRegion: "Bagmati Province",
+      addressCountry: "NP",
     },
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        opens: "08:00",
-        closes: "18:00",
+        dayOfWeek: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "10:00",
+        closes: "17:00",
       },
     ],
     priceRange: "$$",
@@ -210,76 +215,77 @@ export function websiteJsonLd() {
 // ─────────────────────────────────────────────────────────────
 export const PAGE_SEO: Record<string, PageSEO> = {
   home: {
-    title: "Professional Civil & Structural Engineering",
+    title: "Engineering Consultancy in Nepal",
     description:
-      "XYZ Construct delivers sustainable, creative and efficient civil and structural engineering solutions. 128+ projects per year. Consult our team today.",
+      "Kallisto Engineering Consultancy delivers planning, feasibility studies, design, survey and supervision across transportation, hydropower, water resources and urban development. 31+ projects nationwide.",
     slug: "/",
     keywords: [
-      "civil engineering",
-      "structural engineering",
-      "construction services",
-      "electrical engineering",
-      "process engineering",
+      "engineering consultancy Nepal",
+      "civil engineering Nepal",
+      "DGPS survey",
+      "GIS mapping Nepal",
+      "hydropower engineering",
+      "EIA IEE Nepal",
     ],
   },
   about: {
     title: "About Us",
     description:
-      "Learn about XYZ Construct — our mission, values and the expert team behind 20+ years of trusted construction and engineering excellence.",
+      "Learn about Kallisto Engineering Consultancy — our mission, vision, core values and the 14-member multidisciplinary team behind our engineering work since 2074 B.S.",
     slug: "/about",
     keywords: [
-      "about XYZ construct",
-      "construction company",
-      "engineering team",
+      "about Kallisto Engineering",
+      "engineering consultancy Kathmandu",
+      "engineering team Nepal",
     ],
   },
   services: {
     title: "Our Services",
     description:
-      "Explore XYZ Construct's full range of engineering services: process engineering, civil engineering, electrical engineering, construction management and more.",
+      "Explore Kallisto's engineering services: transportation, hydropower & energy, water supply & urban development, environmental & social studies, and survey, GIS & project management.",
     slug: "/services",
     keywords: [
-      "engineering services",
-      "construction services",
-      "civil engineering",
-      "electrical engineering",
-      "process engineering",
-      "specialty services",
+      "engineering services Nepal",
+      "transportation engineering",
+      "hydropower engineering",
+      "water supply engineering",
+      "environmental impact assessment",
+      "GIS survey Nepal",
     ],
   },
   singleService: {
-    title: "Electrical Engineering Services",
+    title: "Environmental & Social Studies",
     description:
-      "Professional electrical engineering services including on-site testing, lighting planning, trace heating, schematics development, grounding and lightning protection.",
-    slug: "/services/single-service",
+      "Environmental Impact Assessment (EIA), Initial Environmental Examination (IEE), Brief Environment Study (BES), geological investigation and socio-economic surveys.",
+    slug: "/services/environmental-social-studies",
     keywords: [
-      "electrical engineering",
-      "on-site testing",
-      "lighting planning",
-      "grounding",
+      "EIA Nepal",
+      "IEE Nepal",
+      "geological investigation",
+      "socio-economic survey",
     ],
   },
   projects: {
     title: "Our Projects",
     description:
-      "Browse XYZ Construct's completed projects including factory design, shopping centre construction, renovation and water supply system installation.",
+      "Browse Kallisto Engineering's completed and ongoing projects — road and bridge surveys, hospital MEP design, wastewater master plans and environmental studies across Nepal.",
     slug: "/projects",
     keywords: [
-      "construction projects",
-      "engineering projects",
-      "factory construction",
-      "building renovation",
+      "engineering projects Nepal",
+      "bridge design DPR",
+      "road survey Nepal",
+      "hospital MEP design",
     ],
   },
   contact: {
     title: "Contact Us",
     description:
-      "Get in touch with XYZ Construct. Call 1-313-645-3395, email info@construct.com or fill in our contact form and we'll respond within 24 hours.",
+      "Get in touch with Kallisto Engineering Consultancy. Call +977-9841666927, email kallistoengineering@gmail.com or visit us in Mid-Baneshwor, Kathmandu.",
     slug: "/contact",
     keywords: [
-      "contact XYZ construct",
-      "construction enquiry",
-      "engineering consultation",
+      "contact Kallisto Engineering",
+      "engineering consultancy Kathmandu",
+      "engineering consultation Nepal",
     ],
   },
 };

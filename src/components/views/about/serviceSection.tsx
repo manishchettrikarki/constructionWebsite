@@ -1,76 +1,16 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
+import { useState } from "react";
+import { SERVICES_SLIDES } from "@/contents/aboutPage";
 import { Subtitle } from "@/components/reusable/subtitle";
 
-const slides = [
-  {
-    title: "Process Engineering",
-    img: "/img/tabs/01.jpg",
-    text: "Vitae ultricies leo integer malesuada nunc vel. Molestie ac feugiat sed lectus vestibulum mattis ullamcorper velit. Viverra aliquet eget sit amet tellus cras adipiscing.",
-    items: [
-      "Making lives easier",
-      "Get every solution right here",
-      "Innovation and creativity",
-    ],
-  },
-  {
-    title: "Chemistry and Metallurgy",
-    img: "/img/tabs/02.jpg",
-    text: "Vitae ultricies leo integer malesuada nunc vel. Molestie ac feugiat sed lectus vestibulum mattis ullamcorper velit. Viverra aliquet eget sit amet tellus cras adipiscing.",
-    items: [
-      "Making lives easier",
-      "Get every solution right here",
-      "Innovation and creativity",
-    ],
-  },
-  {
-    title: "Electrical Engineering",
-    img: "/img/tabs/03.jpg",
-    text: "Vitae ultricies leo integer malesuada nunc vel. Molestie ac feugiat sed lectus vestibulum mattis ullamcorper velit. Viverra aliquet eget sit amet tellus cras adipiscing.",
-    items: [
-      "Making lives easier",
-      "Get every solution right here",
-      "Innovation and creativity",
-    ],
-  },
-  {
-    title: "Specialty Services",
-    img: "/img/tabs/04.jpg",
-    text: "Vitae ultricies leo integer malesuada nunc vel. Molestie ac feugiat sed lectus vestibulum mattis ullamcorper velit. Viverra aliquet eget sit amet tellus cras adipiscing.",
-    items: [
-      "Making lives easier",
-      "Get every solution right here",
-      "Innovation and creativity",
-    ],
-  },
-  {
-    title: "Civil Engineering",
-    img: "/img/tabs/05.jpg",
-    text: "Vitae ultricies leo integer malesuada nunc vel. Molestie ac feugiat sed lectus vestibulum mattis ullamcorper velit. Viverra aliquet eget sit amet tellus cras adipiscing.",
-    items: [
-      "Making lives easier",
-      "Get every solution right here",
-      "Innovation and creativity",
-    ],
-  },
-  {
-    title: "Construction Management",
-    img: "/img/tabs/06.jpg",
-    text: "Vitae ultricies leo integer malesuada nunc vel. Molestie ac feugiat sed lectus vestibulum mattis ullamcorper velit. Viverra aliquet eget sit amet tellus cras adipiscing.",
-    items: [
-      "Making lives easier",
-      "Get every solution right here",
-      "Innovation and creativity",
-    ],
-  },
-];
 
+// 
 export function AboutServicesSection() {
   const [active, setActive] = useState(0);
 
-  const current = slides[active];
+  const current = SERVICES_SLIDES[active];
 
   return (
     <section className="py-24 bg-white">
@@ -84,15 +24,14 @@ export function AboutServicesSection() {
 
         {/* Tab buttons */}
         <div className="flex flex-wrap gap-2 mb-10">
-          {slides.map((s, i) => (
+          {SERVICES_SLIDES.map((s, i) => (
             <button
               key={i}
               onClick={() => setActive(i)}
-              className={`px-4 py-2 rounded text-sm font-semibold border transition-all duration-200 ${
-                active === i
-                  ? "bg-[#ffc631] border-[#ffc631] text-[#1a1a2e]"
-                  : "bg-white border-gray-200 text-gray-500 hover:border-[#ffc631] hover:text-[#ffc631]"
-              }`}
+              className={`px-4 py-2 rounded text-sm font-semibold border transition-all duration-200 ${active === i
+                ? "bg-[#ffc631] border-[#ffc631] text-[#1a1a2e]"
+                : "bg-white border-gray-200 text-gray-500 hover:border-[#ffc631] hover:text-[#ffc631]"
+                }`}
             >
               {s.title}
             </button>
@@ -162,27 +101,20 @@ export function AboutServicesSection() {
               ))}
             </ul>
 
-            <Link
-              href="/single-service"
-              className="self-start bg-[#1a1a2e] hover:bg-[#ffc631] hover:text-[#1a1a2e] text-white font-bold px-8 py-3.5 rounded transition-colors duration-200"
-            >
-              Read More
-            </Link>
           </div>
         </div>
 
         {/* Pagination dots */}
         <div className="flex justify-center gap-2 mt-10">
-          {slides.map((_, i) => (
+          {SERVICES_SLIDES.map((_, i) => (
             <button
               key={i}
               onClick={() => setActive(i)}
               aria-label={`Go to slide ${i + 1}`}
-              className={`w-2.5 h-2.5 rounded-full transition-all duration-200 ${
-                active === i
-                  ? "bg-[#ffc631] w-6"
-                  : "bg-gray-300 hover:bg-gray-400"
-              }`}
+              className={`w-2.5 h-2.5 rounded-full transition-all duration-200 ${active === i
+                ? "bg-[#ffc631] w-6"
+                : "bg-gray-300 hover:bg-gray-400"
+                }`}
             />
           ))}
         </div>

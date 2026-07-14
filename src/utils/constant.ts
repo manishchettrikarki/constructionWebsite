@@ -4,7 +4,14 @@ import {
   SheldCheckIcon,
   WorkforceIcon,
   WrenchIcon,
+  ExperienceIcon,
+  ExcellenceIcon,
+  InnovationIcon,
+  PartnershipIcon,
+  ProjectIcon,
 } from "@/icons";
+
+// 
 import {
   IFAQItem,
   IFeatureListItem,
@@ -18,46 +25,46 @@ export const navItems: INavItemList[] = [
   { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Projects", href: "/projects" },
-  { label: "Contacts", href: "/contact" },
+  { label: "Contact", href: "/contact" },
 ];
 
 // Services List
 export const services: IServieceListItem[] = [
   {
     number: "01",
-    title: "Process Engineering",
+    title: "Engineering Consultancy",
     description:
-      "Senectus et netus et malesuada. Nunc pulvinar sapien et ligula ullamcorper malesuada proin",
+      "Comprehensive engineering consultancy services covering planning, feasibility studies, detailed design, and project supervision.",
   },
   {
     number: "02",
-    title: "Construction Services",
+    title: "Transportation Engineering",
     description:
-      "Donec adipiscing tristique risus nec feugiat in. Porttitor massa id neque aliquam vestibulum morbi",
+      "Engineering solutions for highways, roads, bridges, airports, and transportation infrastructure.",
   },
   {
     number: "03",
-    title: "Civil Engineering",
+    title: "Hydropower & Energy",
     description:
-      "Morbi tincidunt ornare massa eget egestas purus viverra blandit elementum cursus risus.",
+      "Feasibility studies, engineering design, and technical consulting for hydropower and renewable energy projects.",
   },
   {
     number: "04",
-    title: "Electrical Engineering",
+    title: "Water Supply & Urban Development",
     description:
-      "Ac tortor vitae purus faucibus ornare suspendisse sed nisi lacus. Nam aliquam sem et tortor",
+      "Planning, design, and management of water supply systems, sanitation, and urban infrastructure projects.",
   },
   {
     number: "05",
-    title: "Chemistry and Metallurgy",
+    title: "Environmental Services",
     description:
-      "Mollis nunc sed id semper. Sodales ut etiam sit amet nisl purus. Sed odio morbi quis commodo odio",
+      "EIA, IEE, environmental assessments, geological investigations, and sustainable development consulting.",
   },
   {
     number: "06",
-    title: "Specialty Services",
+    title: "Survey, GIS & Project Management",
     description:
-      "Tellus elementum sagittis vitae et. Amet justo donec enim diam vulputate ut consequat id porta nibh",
+      "DGPS surveys, GIS mapping, topographic surveys, project management, monitoring, and capacity building services.",
   },
 ];
 
@@ -65,55 +72,56 @@ export const services: IServieceListItem[] = [
 export const projects: IProjectListItem[] = [
   {
     img: null,
-    title: "Jazzy Elite Construction Shopping",
-    loc: "100 Sunrise Ct Hamel, Minnesota",
+    title: "Kathmandu-Terai/Madhesh Expressway",
+    loc: "Kathmandu, Nepal",
   },
   {
     img: null,
-    title: "Fresh Concept Construction Renovation",
-    loc: "Rocky Highway Port Juana",
+    title: "Dudhuwa Khola Bridge DPR",
+    loc: "Banke, Nepal",
   },
   {
     img: null,
-    title: "Installation a Supply System",
-    loc: "Wuckert Junctions Hermannberg",
+    title: "Central Infectious Disease Hospital",
+    loc: "Teku, Kathmandu",
   },
   {
     img: null,
-    title: "Reconstruction of Old Factory Building",
-    loc: "Stoltenberg Underpass Blockbury",
+    title: "Pokhara Wastewater Master Plan",
+    loc: "Pokhara Metropolitan City",
   },
 ];
 
 // Features List
 export const features: IFeatureListItem[] = [
   {
-    title: "Structural Engineering",
+    title: "Experienced Engineers",
     description:
-      "Advanced structural solutions for residential and commercial projects across Kathmandu.",
-    icon: BuildingIcon,
-  },
-  {
-    title: "Construction Management",
-    description:
-      "Efficient planning and execution ensuring timely and cost-effective delivery.",
-    icon: HammerIcon,
-  },
-  {
-    title: "Quality Assurance",
-    description:
-      "Strict quality control aligned with Nepal building standards.",
-    icon: SheldCheckIcon,
-  },
-  {
-    title: "Skilled Workforce",
-    description:
-      "Experienced engineers and technicians dedicated to excellence.",
+      "A multidisciplinary team of engineers, architects, surveyors, environmental experts, and GIS professionals.",
     icon: WorkforceIcon,
   },
   {
-    title: "Maintenance & Support",
-    description: "Reliable post-construction support and maintenance services.",
+    title: "Integrated Engineering Solutions",
+    description:
+      "From feasibility studies to design, supervision, and project management under one consultancy.",
+    icon: BuildingIcon,
+  },
+  {
+    title: "Quality & Professional Ethics",
+    description:
+      "Delivering engineering solutions that meet national and international standards with integrity.",
+    icon: SheldCheckIcon,
+  },
+  {
+    title: "Advanced Survey & GIS",
+    description:
+      "Modern DGPS surveys, GIS mapping, topographic surveys, and digital engineering solutions.",
+    icon: HammerIcon,
+  },
+  {
+    title: "Sustainable Development",
+    description:
+      "Engineering projects focused on environmental responsibility and long-term community development.",
     icon: WrenchIcon,
   },
 ];
@@ -121,70 +129,70 @@ export const features: IFeatureListItem[] = [
 // FAQ list
 export const faqs: IFAQItem[] = [
   {
-    question: "Do you provide services outside Kathmandu?",
+    question: "What engineering services does Kallisto provide?",
     answer:
-      "Yes, XYZ Construction operates across Kathmandu Valley and extends services to major cities like Pokhara, Chitwan, and Butwal depending on project scale.",
+      "We provide planning, feasibility studies, engineering design, project supervision, GIS mapping, environmental assessments, and project management services.",
   },
   {
-    question: "What types of projects do you handle?",
+    question: "Which sectors do you specialize in?",
     answer:
-      "We specialize in residential buildings, commercial complexes, renovation works, and structural design projects tailored to Nepal’s building codes.",
+      "Our expertise includes transportation, hydropower, water supply, sanitation, irrigation, urban development, buildings, environmental studies, and infrastructure planning.",
   },
   {
-    question: "How long does a typical house construction take?",
+    question: "Do you provide Environmental Impact Assessment (EIA) services?",
     answer:
-      "A standard residential house in Kathmandu usually takes 8–14 months depending on design complexity, site conditions, and approvals.",
+      "Yes. We conduct Environmental Impact Assessments (EIA), Initial Environmental Examinations (IEE), geological investigations, and environmental consulting.",
   },
   {
-    question: "Do you assist with municipality approvals?",
+    question: "Do you work with government and international organizations?",
     answer:
-      "Yes, we handle all necessary approvals including Kathmandu Metropolitan permits, structural drawings, and compliance documentation.",
+      "Yes. Our clients include Government of Nepal agencies, municipalities, ADB, JICA, GIZ, and private sector organizations.",
   },
   {
-    question: "Can I get a cost estimate before starting?",
+    question: "Can you manage projects from survey to completion?",
     answer:
-      "Absolutely. We provide detailed cost estimation and BOQ (Bill of Quantities) after understanding your requirements and site conditions.",
+      "Absolutely. We offer complete project lifecycle support including survey, planning, design, supervision, monitoring, and project management.",
   },
 ];
 
 // Gallery items
 export const galleryItems = [
-  "Fresh Concept Construction Renovation",
-  "Fresh Concept Construction Renovation",
-  "Fresh Concept Construction Renovation",
-  "Fresh Concept Construction Renovation",
+  "Kathmandu-Terai/Madhesh Expressway",
+  "Dudhuwa Khola Bridge",
+  "Central Infectious Disease Hospital",
+  "Pokhara Wastewater Master Plan",
 ];
 
 // Page Hero Content
 export const PAGE_HEROES = {
   about: {
-    subtitle: "Building communities",
-    title: "About",
+    subtitle: "Engineering Excellence",
+    title: "About Us",
     breadcrumbs: [{ label: "Home", href: "/" }, { label: "About" }],
   },
   services: {
-    subtitle: "Building communities",
+    subtitle: "Professional Engineering Services",
     title: "Services",
     breadcrumbs: [{ label: "Home", href: "/" }, { label: "Services" }],
   },
   singleService: {
-    subtitle: "Single service",
-    title: "Electrical Engineering",
+    subtitle: "Engineering Solutions",
+    title: "Environmental Services",
     breadcrumbs: [
       { label: "Home", href: "/" },
       { label: "Services", href: "/services" },
-      { label: "Electrical Engineering" },
+      { label: "Environmental Services" },
     ],
   },
   projects: {
-    subtitle: "Building communities",
+    subtitle: "Engineering Projects",
     title: "Our Projects",
-    breadcrumbs: [{ label: "Home", href: "/" }, { label: "Our Projects" }],
+    breadcrumbs: [{ label: "Home", href: "/" }, { label: "Projects" }],
   },
   contact: {
-    subtitle: "Build relationships",
-    title: "Contacts",
-    breadcrumbs: [{ label: "Home", href: "/" }, { label: "Contacts" }],
+    subtitle: "Let's Build Together",
+    title: "Contact Us",
+    breadcrumbs: [{ label: "Home", href: "/" }, { label: "Contact" }],
   },
 };
 
@@ -192,38 +200,38 @@ export const PAGE_HEROES = {
 export const SERVICES = [
   {
     n: "01",
-    title: "Process Engineering",
-    desc: "Senectus et netus et malesuada. Nunc pulvinar sapien et ligula ullamcorper malesuada proin.",
-    href: "/services/single-service",
+    title: "Engineering Consultancy",
+    desc: "Professional consultancy services covering planning, feasibility studies, design, supervision, and project management.",
+    href: "/services/engineering-consultancy",
   },
   {
     n: "02",
-    title: "Construction Services",
-    desc: "Donec adipiscing tristique risus nec feugiat in. Porttitor massa id neque aliquam vestibulum morbi.",
-    href: "/services/single-service",
+    title: "Transportation Engineering",
+    desc: "Roads, highways, bridges, airports, and transportation infrastructure planning and design.",
+    href: "/services/transportation-engineering",
   },
   {
     n: "03",
-    title: "Civil Engineering",
-    desc: "Morbi tincidunt ornare massa eget egestas purus viverra blandit elementum cursus risus.",
-    href: "/services/single-service",
+    title: "Hydropower & Energy",
+    desc: "Engineering solutions for hydropower development, renewable energy, and energy infrastructure.",
+    href: "/services/hydropower-energy",
   },
   {
     n: "04",
-    title: "Electrical Engineering",
-    desc: "Ac tortor vitae purus faucibus ornare suspendisse sed nisi lacus. Nam aliquam sem et tortor.",
-    href: "/services/single-service",
+    title: "Water Supply & Urban Development",
+    desc: "Design and management of water supply, sanitation, wastewater, and urban infrastructure systems.",
+    href: "/services/water-urban-development",
   },
   {
     n: "05",
-    title: "Chemistry and Metallurgy",
-    desc: "Mollis nunc sed id semper. Sodales ut etiam sit amet nisl purus. Sed odio morbi quis commodo odio.",
-    href: "/services/single-service",
+    title: "Environmental Services",
+    desc: "Environmental Impact Assessment (EIA), Initial Environmental Examination (IEE), and geological investigations.",
+    href: "/services/environmental-services",
   },
   {
     n: "06",
-    title: "Specialty Services",
-    desc: "Tellus elementum sagittis vitae et. Amet justo donec enim diam vulputate ut consequat id porta nibh.",
-    href: "/services/single-service",
+    title: "Survey, GIS & Project Management",
+    desc: "DGPS surveys, GIS mapping, topographic surveys, monitoring, and complete project management solutions.",
+    href: "/services/survey-gis",
   },
 ];

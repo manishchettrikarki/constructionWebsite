@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import { useCountUp } from "@/hooks/useCountUp";
 import { Subtitle } from "@/components/reusable/subtitle";
 import { heroContent } from "@/contents/homePage";
+import { BuildingConstruction } from "@/animations/constructionBuilding";
 
 export function Hero() {
   const [visible, setVisible] = useState(false);
@@ -91,13 +92,14 @@ export function Hero() {
 
           {/* ── Right: image card ── */}
           <div className="relative z-10 hidden lg:block w-full h-full rounded-2xl overflow-hidden">
-            <Image
+            {/* <Image
               src={imgSrc}
               alt="Building"
               fill
               onError={() => setImgSrc("/fallback.jpg")}
               className="object-cover"
-            />
+            /> */}
+            <BuildingConstruction />
           </div>
         </div>
       </div>
