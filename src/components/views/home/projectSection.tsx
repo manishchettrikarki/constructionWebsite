@@ -22,15 +22,14 @@ export function Projects() {
           {projectsContent.projects.map((p, i) => (
             <li key={i} className="flex flex-col">
               {/* Image */}
-              <div className="aspect-625/500 overflow-hidden mb-5 relative group">
+              <div className="w-[92%] mx-auto aspect-[625/500] overflow-hidden mb-5 relative group rounded-xl">
                 <Image
                   src={p.image}
                   alt={p.title}
                   fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
 
-                {/* Optional dark overlay for readability */}
                 <div className="absolute inset-0 bg-linear-to-t from-[#001f3f]/70 via-transparent to-transparent" />
               </div>
 

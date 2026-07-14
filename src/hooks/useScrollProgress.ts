@@ -2,19 +2,28 @@
 
 import { useEffect, useState } from "react";
 
+// How long (ms) after the last scroll event before we consider the
+// page "idle" again.
+const SCROLL_IDLE_DELAY_MS = 250;
+
 /**
- * Tracks how far the page has been scrolled as a value between 0 and 1.
- * 0  -> top of the page
- * 1  -> bottom of the page
+ * Tracks how far the page has been scrolled as a value between 0 and 1,
+ * plus whether the page is actively being scrolled right now.
  *
- * Uses requestAnimationFrame to throttle updates so it stays smooth
- * even on long pages with frequent scroll events.
+ * progress: 0 -> top of the page, 1 -> bottom of the page.
+ * isScrolling: true while scroll events are actively firing, flips back
+ * to false SCROLL_IDLE_DELAY_MS after the last one.
+ *
+ * Uses requestAnimationFrame to throttle the progress calculation so it
+ * stays smooth even on long pages with frequent scroll events.
  */
 export function useScrollProgress() {
     const [progress, setProgress] = useState(0);
+    const [isScrolling, setIsScrolling] = useState(false);
 
     useEffect(() => {
         let frame = 0;
+        let idleTimeout: ReturnType<typeof setTimeout>;
 
         const calculate = () => {
             const scrollTop = window.scrollY;
@@ -26,6 +35,13 @@ export function useScrollProgress() {
         };
 
         const onScroll = () => {
+            setIsScrolling(true);
+            clearTimeout(idleTimeout);
+            idleTimeout = setTimeout(
+                () => setIsScrolling(false),
+                SCROLL_IDLE_DELAY_MS
+            );
+
             cancelAnimationFrame(frame);
             frame = requestAnimationFrame(calculate);
         };
@@ -36,10 +52,11 @@ export function useScrollProgress() {
 
         return () => {
             cancelAnimationFrame(frame);
+            clearTimeout(idleTimeout);
             window.removeEventListener("scroll", onScroll);
             window.removeEventListener("resize", onScroll);
         };
     }, []);
 
-    return progress;
+    return { progress, isScrolling };
 }

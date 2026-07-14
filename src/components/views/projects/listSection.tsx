@@ -66,9 +66,9 @@ export function ProjectsListSection() {
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
-                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                {/* <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                   <BuildingOverlayIcon className="w-24 h-24 text-gray-200/50" />
-                </div>
+                </div> */}
                 <div
                   className={`absolute top-0 h-full w-1.5 bg-[#ffc631] ${index % 2 !== 0
                     ? "right-0 rounded-r-2xl"

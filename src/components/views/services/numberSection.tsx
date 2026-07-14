@@ -6,6 +6,7 @@ import { StatItem } from "@/utils/statItem";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { PlayIcon } from "@/icons";
+import { Cap } from "@/animations/cap";
 
 
 export function ServicesNumbersSection() {
@@ -54,7 +55,7 @@ export function ServicesNumbersSection() {
 
           {/* Right: video */}
           <div className="relative w-full h-72 sm:h-105 rounded-2xl overflow-hidden bg-black/40 border border-white/10 flex items-center justify-center">
-            <div className="absolute inset-0">
+            {/* <div className="absolute inset-0">
               <Image
                 src={imgSrc}
                 alt="Kallisto Engineering Consultancy - Building the Future"
@@ -69,7 +70,8 @@ export function ServicesNumbersSection() {
               className="relative z-10 flex items-center justify-center w-16 h-16 rounded-full bg-[#ffc631] hover:scale-110 transition-transform duration-200 shadow-xl"
             >
               <PlayIcon className="w-6 h-6 text-[#1a1a2e] ml-1" />
-            </button>
+            </button> */}
+            <Cap />
           </div>
         </div>
       </div>

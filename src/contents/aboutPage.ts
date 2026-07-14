@@ -74,7 +74,7 @@ export const ABOUT_QUOTE = {
 export const SERVICES_SLIDES = [
     {
         title: "Transportation Engineering",
-        img: "/img/tabs/01.jpg",
+        img: "/images/about/road-construction.jpg",
         text: "Kallisto provides comprehensive transportation engineering services including planning, feasibility studies, detailed design, and supervision of highways, roads, bridges, airports, and railways. Our expertise covers the entire project lifecycle from conception to completion.",
         items: [
             "Highway and Road Design",
@@ -85,7 +85,7 @@ export const SERVICES_SLIDES = [
     },
     {
         title: "Hydropower & Energy",
-        img: "/img/tabs/02.jpg",
+        img: "/images/about/hydropower.jpg",
         text: "Our firm specializes in hydropower and energy sector projects, offering services from feasibility studies and detailed engineering surveys to geological investigation and project management. We are committed to sustainable energy solutions for Nepal's development.",
         items: [
             "Feasibility Studies",
@@ -96,7 +96,7 @@ export const SERVICES_SLIDES = [
     },
     {
         title: "Water Supply & Sanitation",
-        img: "/img/tabs/03.jpg",
+        img: "/images/about/water-supply.jpg",
         text: "Kallisto delivers integrated water supply and sanitation solutions including urban planning, wastewater management, solid waste management, and urban infrastructure development. We prioritize sustainable and community-focused approaches.",
         items: [
             "Water Supply Systems Design",
@@ -107,7 +107,7 @@ export const SERVICES_SLIDES = [
     },
     {
         title: "Environmental Services",
-        img: "/img/tabs/04.jpg",
+        img: "/images/about/environment.jpg",
         text: "We provide complete environmental consulting services including Environmental Impact Assessments (EIA), Initial Environmental Examinations (IEE), Brief Environmental Studies (BES), and socio-economic distribution studies. Our holistic approach ensures sustainable development.",
         items: [
             "Environmental Impact Assessment (EIA)",
@@ -118,7 +118,7 @@ export const SERVICES_SLIDES = [
     },
     {
         title: "GIS & Survey Services",
-        img: "/img/tabs/05.jpg",
+        img: "/images/about/gis.jpg",
         text: "Kallisto offers cutting-edge GIS mapping and survey services including DGPS surveys, detailed topographic surveys, consumer indexing, and geological investigations. Our team uses advanced technology to deliver accurate and reliable data.",
         items: [
             "DGPS and Topographic Survey",
@@ -129,7 +129,7 @@ export const SERVICES_SLIDES = [
     },
     {
         title: "Irrigation & Agriculture",
-        img: "/img/tabs/06.jpg",
+        img: "/images/about/irrigation.jpg",
         text: "Our firm provides comprehensive services in irrigation and agriculture sector including river basin planning, flood forecasting, early warning systems, and natural resources management. We work towards enhancing agricultural productivity and rural livelihoods.",
         items: [
             "Irrigation System Design",
@@ -208,4 +208,22 @@ export const REVIEWS = [
         text: "Kallisto's GIS mapping and consumer indexing for the Nalinchowk and Nagarkot feeders demonstrated their advanced technical skills and commitment to sustainable development.",
         rating: 5,
     },
+];
+
+// ── Our Team (full roster) ─────────────────────────────────────
+export const TEAM_MEMBERS = [
+    { name: "Mr. Dipesh Aryal", position: "Proprietor/Managing Director", qualification: "BE Civil", experience: "5 Years" },
+    { name: "Mrs. Nikita Shrestha", position: "Director", qualification: "BE Civil", experience: "5 Years" },
+    { name: "Mr. Aditya Poudel", position: "Sr. Engineer", qualification: "BE Civil", experience: "11 Years" },
+    { name: "Ms. Salu Maharjan", position: "Finance Manager", qualification: "BBS", experience: "4 Years" },
+    { name: "Mr. Tika Ram Dhakal", position: "Environmentalist/Forester", qualification: "M.Sc. Forest Management", experience: "31 Years" },
+    { name: "Mr. Chan Bahadur Gurung", position: "Sociologist", qualification: "PhD Sociology", experience: "26 Years" },
+    { name: "Mr. Omkar Pandey", position: "Sociologist", qualification: "MA Sociology", experience: "13 Years" },
+    { name: "Mrs. Sharmila Giri", position: "Environmental Expert", qualification: "M.Sc. Environmental Science", experience: "14 Years" },
+    { name: "Mrs. Kabita Khanal", position: "Tourism Expert", qualification: "MA Anthropology", experience: "19 Years" },
+    { name: "Mr. Ashish Joshi", position: "GIS Expert", qualification: "Masters in Photogrammetry and Geo-informatics", experience: "16 Years" },
+    { name: "Mr. Goverdhan Pandey", position: "Sr. Surveyor", qualification: "BA", experience: "31 Years" },
+    { name: "Mr. Prakash Kadel", position: "Civil Engineer", qualification: "BE Civil", experience: "6 Years" },
+    { name: "Mr. Deepak Raj Bhatt", position: "Sr. Engineer", qualification: "BE Civil/M.Sc. Geotech", experience: "30 Years" },
+    { name: "Mr. Pursottam Yadav", position: "Sub Engineer", qualification: "Diploma in Civil Engineering", experience: "5 Years" },
 ];

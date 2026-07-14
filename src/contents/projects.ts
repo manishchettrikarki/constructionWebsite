@@ -14,7 +14,7 @@ export const PROJECTS: Project[] = [
         location: "Kathmandu, Nepal",
         excerpt:
             "DGPS Survey and Detail Topographic Survey of the intersection area for Nepal's major expressway project, executed for the Government of Nepal and Nepalese Army.",
-        img: "/img/projects/05.jpg",
+        img: "/images/projects/terai-madhesh-road.jpg",
         href: "/projects/single-project",
     },
     {
@@ -22,7 +22,7 @@ export const PROJECTS: Project[] = [
         location: "Dudhuvu Rural Municipality, Nepal",
         excerpt:
             "Initial Environment Examination (IEE) and Geological Investigation for collection of Sand and Gravel from Rapti and Duduwa River.",
-        img: "/img/projects/07.jpg",
+        img: "/images/projects/construction-material.jpg",
         href: "/projects/single-project",
     },
     {
@@ -30,7 +30,7 @@ export const PROJECTS: Project[] = [
         location: "Dudhuvu Rural Municipality, Nepal",
         excerpt:
             "Feasibility Study, Detailed Engineering Survey, Geological Investigation, Hydrological Analysis, and Detailed Design with Cost Estimation for the 70m bridge.",
-        img: "/img/projects/08.jpg",
+        img: "/images/projects/bridge.jpg",
         href: "/projects/single-project",
     },
     {
@@ -38,7 +38,7 @@ export const PROJECTS: Project[] = [
         location: "Butwal-Jitpur Section, Nepal",
         excerpt:
             "Detail Topographic Survey and Geological Investigation of different bridges for the ADB-funded SASEC Road Improvement Project (50 km section).",
-        img: "/img/projects/09.jpg",
+        img: "/images/projects/road-improvement.jpg",
         href: "/projects/single-project",
     },
     {
@@ -46,7 +46,7 @@ export const PROJECTS: Project[] = [
         location: "Sauraha, Chitwan, Nepal",
         excerpt:
             "Brief Environment Study (BES) for Hotel Jungle Vista, conducted for the Regional Hotel Association Nepal, Sauraha.",
-        img: "/img/projects/10.jpg",
+        img: "/images/projects/hotel-jungle-vista.jpg",
         href: "/projects/single-project",
     },
     {
@@ -54,7 +54,7 @@ export const PROJECTS: Project[] = [
         location: "Sauraha, Chitwan, Nepal",
         excerpt:
             "Initial Environment Examination (IEE) of Eden Jungle Resort for the Regional Hotel Association Nepal.",
-        img: "/img/projects/11.jpg",
+        img: "/images/projects/eden-resort.jpg",
         href: "/projects/single-project",
     },
     {
@@ -62,7 +62,7 @@ export const PROJECTS: Project[] = [
         location: "Sauraha, Chitwan, Nepal",
         excerpt:
             "Brief Environment Study (BES) of Chitwan Forest Resort for the Regional Hotel Association Nepal.",
-        img: "/img/projects/12.jpg",
+        img: "/images/projects/chitwan-resort.jpg",
         href: "/projects/single-project",
     },
     {
@@ -70,7 +70,7 @@ export const PROJECTS: Project[] = [
         location: "Sauraha, Chitwan, Nepal",
         excerpt:
             "Brief Environment Study (BES) of Chitwan Park Cottage for the Regional Hotel Association Nepal.",
-        img: "/img/projects/13.jpg",
+        img: "/images/projects/park-cottage.jpg",
         href: "/projects/single-project",
     },
     {
@@ -78,7 +78,7 @@ export const PROJECTS: Project[] = [
         location: "Sauraha, Chitwan, Nepal",
         excerpt:
             "Brief Environment Study (BES) of Wild Adventure Resort for the Regional Hotel Association Nepal.",
-        img: "/img/projects/14.jpg",
+        img: "/images/projects/wild-adventure.jpg",
         href: "/projects/single-project",
     },
     {
@@ -86,7 +86,7 @@ export const PROJECTS: Project[] = [
         location: "Sauraha, Chitwan, Nepal",
         excerpt:
             "Initial Environment Examination (IEE) of Safari Park Hotel and Lodge for the Regional Hotel Association Nepal.",
-        img: "/img/projects/15.jpg",
+        img: "/images/projects/park-safari.jpg",
         href: "/projects/single-project",
     },
     {
@@ -94,7 +94,7 @@ export const PROJECTS: Project[] = [
         location: "Sauraha, Chitwan, Nepal",
         excerpt:
             "Brief Environment Study (BES) of Hotel Hermitage for the Regional Hotel Association Nepal.",
-        img: "/img/projects/16.jpg",
+        img: "/images/projects/hermitage.jpg",
         href: "/projects/single-project",
     },
     {
@@ -102,7 +102,7 @@ export const PROJECTS: Project[] = [
         location: "Sauraha, Chitwan, Nepal",
         excerpt:
             "Brief Environment Study (BES) of Evergreen Eco-Lodge and Restaurant for the Regional Hotel Association Nepal.",
-        img: "/img/projects/17.jpg",
+        img: "/images/projects/eco-lodge.jpg",
         href: "/projects/single-project",
     },
     {
@@ -110,7 +110,7 @@ export const PROJECTS: Project[] = [
         location: "Sauraha, Chitwan, Nepal",
         excerpt:
             "Initial Environment Examination (IEE) of Hotel Royal Safari for the Regional Hotel Association Nepal.",
-        img: "/img/projects/18.jpg",
+        img: "/images/projects/royal-safari.jpg",
         href: "/projects/single-project",
     },
     {
@@ -118,7 +118,7 @@ export const PROJECTS: Project[] = [
         location: "Sauraha, Chitwan, Nepal",
         excerpt:
             "Brief Environment Study (BES) of Hotel Rainforest for the Regional Hotel Association Nepal. (Ongoing)",
-        img: "/img/projects/19.jpg",
+        img: "/images/projects/rainforest.jpg",
         href: "/projects/single-project",
     },
     {
@@ -126,7 +126,7 @@ export const PROJECTS: Project[] = [
         location: "Sauraha, Chitwan, Nepal",
         excerpt:
             "Initial Environment Examination (IEE) of Chitwan Mid Town Resort Pvt. Ltd. (Ongoing)",
-        img: "/img/projects/20.jpg",
+        img: "/images/projects/midtown.jpg",
         href: "/projects/single-project",
     },
     {
@@ -134,7 +134,7 @@ export const PROJECTS: Project[] = [
         location: "Nepal",
         excerpt:
             "GIS mapping and Consumer Indexing for Nalinchowk Feeder, conducted for GIZ Nepal. (Ongoing)",
-        img: "/img/projects/21.jpg",
+        img: "/images/projects/nalinchowk.jpg",
         href: "/projects/single-project",
     },
     {
@@ -142,15 +142,15 @@ export const PROJECTS: Project[] = [
         location: "Nepal",
         excerpt:
             "GIS mapping and Consumer Indexing for Nagarkot Feeder, conducted for GIZ Nepal. (Ongoing)",
-        img: "/img/projects/22.jpg",
+        img: "/images/projects/nagarkot.jpg",
         href: "/projects/single-project",
     },
     {
-        title: "Gobardhan Dham Masterplan",
+        title: "Gobardhan Dam Masterplan",
         location: "Narainapur, Banke, Nepal",
         excerpt:
             "Detailed Engineering Survey, Design and Detailed Report Preparation of Gobardhan Dham (0.95 Ha) for the Government of Nepal.",
-        img: "/img/projects/23.jpg",
+        img: "/images/projects/gobardhan.jpg",
         href: "/projects/single-project",
     },
     {
@@ -158,7 +158,7 @@ export const PROJECTS: Project[] = [
         location: "Narainapur, Banke, Nepal",
         excerpt:
             "Detailed Engineering Survey, Design and Detailed Report Preparation of Sundarmunda Marga (5.3 Km) for the Government of Nepal.",
-        img: "/img/projects/24.jpg",
+        img: "/images/projects/terai-madhesh    -road.jpg",
         href: "/projects/single-project",
     },
     {
@@ -166,7 +166,7 @@ export const PROJECTS: Project[] = [
         location: "Pokhara, Nepal",
         excerpt:
             "Socio-Economic Design Survey for the Development of Master Plan for Wastewater Management in Pokhara Metropolitan City for JICA and Yachiyo Engineering Co., Ltd.",
-        img: "/img/projects/25.jpg",
+        img: "/images/projects/waste-management.jpg",
         href: "/projects/single-project",
     },
     {
@@ -174,7 +174,7 @@ export const PROJECTS: Project[] = [
         location: "Nepal",
         excerpt:
             "Initial Environment Examination (IEE) of Citizen Investment Trust. (Ongoing)",
-        img: "/img/projects/26.jpg",
+        img: "/images/projects/cit.jpg",
         href: "/projects/single-project",
     },
     {
@@ -182,7 +182,7 @@ export const PROJECTS: Project[] = [
         location: "Teku, Kathmandu, Nepal",
         excerpt:
             "MEP Design and Report for the 300-bed Central Infectious Disease Hospital, providing comprehensive mechanical, electrical, and plumbing engineering solutions.",
-        img: "/img/projects/27.jpg",
+        img: "/images/projects/teku-hospital.jpg",
         href: "/projects/single-project",
     },
     {

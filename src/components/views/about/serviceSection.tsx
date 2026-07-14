@@ -51,7 +51,7 @@ export function AboutServicesSection() {
                 (e.target as HTMLImageElement).style.display = "none";
               }}
             />
-            <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            {/* <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
               <svg
                 className="w-24 h-24 text-gray-200"
                 fill="none"
@@ -65,7 +65,7 @@ export function AboutServicesSection() {
                   d="M3 21h18M3 7l9-4 9 4M4 7v14M20 7v14M8 11h2v5H8zm6 0h2v5h-2z"
                 />
               </svg>
-            </div>
+            </div> */}
           </div>
 
           {/* Content */}

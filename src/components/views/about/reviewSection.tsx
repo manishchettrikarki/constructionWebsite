@@ -18,7 +18,7 @@ export function AboutReviewsSection() {
   const visible = [REVIEWS[active], REVIEWS[(active + 1) % REVIEWS.length]];
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-14">
@@ -53,7 +53,7 @@ export function AboutReviewsSection() {
           {visible.map((review, i) => (
             <div
               key={`${active}-${i}`}
-              className="bg-gray-50 border border-gray-100 rounded-2xl p-8 flex flex-col gap-5"
+              className="bg-white border border-gray-100 rounded-2xl p-8 flex flex-col gap-5"
             >
               <StarRating count={review.rating} />
 

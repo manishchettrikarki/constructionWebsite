@@ -6,6 +6,7 @@ import { useState } from "react";
 import { Subtitle } from "@/components/reusable/subtitle";
 import { ACHIEVEMENTS, EXPERTS_CONTENT } from "@/contents/services";
 import { BuildingIcon } from "@/icons";
+import { SolvingProblems } from "@/animations/solvingProblems";
 
 
 export function ServicesExpertsSection() {
@@ -47,7 +48,7 @@ export function ServicesExpertsSection() {
 
           {/* Right: image */}
           <div className="relative w-full h-115 rounded-2xl overflow-hidden bg-gray-100">
-            <div className="relative w-full h-full">
+            {/* <div className="relative w-full h-full">
               <Image
                 src={imgSrc}
                 alt={EXPERTS_CONTENT.imageAlt}
@@ -58,9 +59,10 @@ export function ServicesExpertsSection() {
             </div>
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
               <BuildingIcon className="w-32 h-32 text-gray-200" />
-            </div>
+            </div> */}
             {/* Gold accent */}
-            <div className="absolute top-0 left-0 w-1.5 h-full bg-[#ffc631] rounded-l-2xl" />
+            <SolvingProblems />
+            {/* <div className="absolute top-0 left-0 w-1.5 h-full bg-[#ffc631] rounded-l-2xl" /> */}
           </div>
         </div>
       </div>

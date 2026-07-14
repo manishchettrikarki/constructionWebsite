@@ -28,6 +28,13 @@ const WEIGHT_MAX_PX = 28;
 
 const PERSON_WIDTH_PX = 24;
 
+// Opacity when the page is idle (not being scrolled) vs actively
+// scrolling — faded out at rest so it reads as a subtle scroll
+// indicator rather than a constant distraction, full strength the
+// moment the page starts moving.
+const IDLE_OPACITY = 0.28;
+const ACTIVE_OPACITY = 1;
+
 // Combines a px offset and a % offset into a single CSS calc() string.
 const mixedOffset = (px: number, pct: number) => `calc(${px}px + ${pct}%)`;
 
@@ -42,9 +49,13 @@ const mixedOffset = (px: number, pct: number) => `calc(${px}px + ${pct}%)`;
  * gets — while the worker's platform is hoisted up toward the pulley,
  * exactly like a counterweighted lift. The worker's travel is clamped
  * with a fixed pixel clearance so it can never rise above the pulley.
+ *
+ * It sits at low opacity while the page is idle and fades to full
+ * opacity while actively scrolling, acting as a stylised replacement
+ * for the (hidden) native scrollbar.
  */
 export function ScrollPulleyLift() {
-    const progress = useScrollProgress();
+    const { progress, isScrolling } = useScrollProgress();
 
     // Weight: starts just below the pulley (px-anchored), ends near the
     // bottom of the viewport (%-anchored).
@@ -78,7 +89,8 @@ export function ScrollPulleyLift() {
         <div
             aria-hidden="true"
             role="presentation"
-            className="pointer-events-none select-none fixed top-0 right-1 h-screen w-7 sm:w-8 z-[999999]"
+            className="pointer-events-none select-none fixed top-0 right-1 h-screen w-7 sm:w-8 z-[999999] transition-opacity duration-300 ease-out"
+            style={{ opacity: isScrolling ? ACTIVE_OPACITY : IDLE_OPACITY }}
         >
             <div className="relative h-full w-full">
                 {/* Pulley, mounted at the top — rope wrap is drawn into the icon itself */}
@@ -93,7 +105,7 @@ export function ScrollPulleyLift() {
                     style={{ left: leftStrand, top: ropeTop, height: weightRopeHeight }}
                 />
                 <LiftWeightIcon
-                    className="absolute -translate-x-1/2 h-auto drop-shadow-md transition-[top,width,height] duration-100 ease-linear"
+                    className="absolute -translate-x-1/2 h-auto drop-shadow-md"
                     style={{ left: leftStrand, top: weightTop, width: weightSize }}
                 />
 
@@ -103,7 +115,7 @@ export function ScrollPulleyLift() {
                     style={{ left: rightStrand, top: ropeTop, height: personRopeHeight }}
                 />
                 <LiftPersonIcon
-                    className="absolute -translate-x-1/2 h-auto drop-shadow-md transition-[top] duration-100 ease-linear"
+                    className="absolute -translate-x-1/2 h-auto drop-shadow-md"
                     style={{ left: rightStrand, top: personTop, width: PERSON_WIDTH_PX }}
                 />
             </div>

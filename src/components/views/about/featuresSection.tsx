@@ -3,6 +3,7 @@
 import { Subtitle } from "@/components/reusable/subtitle";
 import { Checklist } from "@/components/reusable/checklist";
 import { ABOUT_CHECKLIST, ABOUT_FEATURES } from "@/contents/aboutPage";
+import { BuildingExperience } from "@/animations/aboutPageConstruction";
 
 
 // 
@@ -25,15 +26,18 @@ export function AboutFeaturesSection() {
 
             {/* Video */}
             <div className="relative w-full h-64 rounded-2xl overflow-hidden bg-black/40 border border-gray-200 flex items-center justify-center">
-              <img
+              {/* <img
                 src="/img/video/02.jpg"
                 alt="Video thumbnail"
                 className="absolute inset-0 w-full h-full object-cover opacity-60"
                 onError={(e) => {
                   (e.target as HTMLImageElement).style.display = "none";
                 }}
-              />
-              <button
+              /> */}
+              <BuildingExperience />
+              <div className="absolute inset-0 bg-black/40"></div>
+              <div className="absolute inset-0 flex items-center justify-center"></div>
+              {/* <button
                 type="button"
                 aria-label="Play video"
                 className="relative z-10 flex items-center justify-center w-14 h-14 rounded-full bg-[#ffc631] hover:scale-110 transition-transform duration-200 shadow-xl"
@@ -45,7 +49,7 @@ export function AboutFeaturesSection() {
                 >
                   <path d="M8 5v14l11-7z" />
                 </svg>
-              </button>
+              </button> */}
             </div>
           </div>
 
