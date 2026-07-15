@@ -106,21 +106,15 @@ export function Header() {
           <ul className="flex flex-col gap-6 mt-6">
             {navItems.map((item) => (
               <li key={item.label}>
-                <button
-                  className="flex items-center gap-2 text-white text-sm font-bold uppercase tracking-wider font-['Archivo',sans-serif] w-full text-left"
-                  onClick={() =>
-                    setMobileDropdown(
-                      mobileDropdown === item.label ? null : item.label,
-                    )
-                  }
-                >
+                <a href={item.href} className="flex items-center gap-2 text-white text-sm font-bold uppercase tracking-wider font-['Archivo',sans-serif] w-full text-left">
+
                   {item.label}
                   {item.children && (
                     <ChevronRightIcon
                       className={`w-3 h-3 text-[#ffc631] transition-transform ${mobileDropdown === item.label ? "rotate-90" : "rotate-0"}`}
                     />
                   )}
-                </button>
+                </a>
                 {item.children && mobileDropdown === item.label && (
                   <ul className="flex flex-col gap-3 mt-3 ml-4">
                     {item.children.map((c) => (
