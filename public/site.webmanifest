@@ -1,11 +1,11 @@
 {
-  "name": "XYZ Construct",
-  "short_name": "XYZ",
-  "description": "Professional civil and structural engineering solutions.",
+  "name": "Kallisto Engineering Consultancy Pvt. Ltd.",
+  "short_name": "Kallisto Engineering",
+  "description": "Professional engineering consultancy services in transportation, hydropower and energy, water supply and sanitation, urban development, irrigation, environmental studies, GIS mapping, project management, and related engineering sectors.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#1a1a2e",
-  "theme_color": "#1a1a2e",
+  "background_color": "#001f3f",
+  "theme_color": "#001f3f",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",

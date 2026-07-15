@@ -1,125 +1,140 @@
-// components/projects/ProjectsListSection.tsx
 "use client";
 
+import { useMemo, useState } from "react";
 import Image from "next/image";
-import { useState } from "react";
-// import { ArrowLink } from "@/components/reusable/arrowLink";
-import { PROJECTS } from "@/contents/projects";
-import { BuildingOverlayIcon, ChevronIcon, LocationIcon } from "@/icons";
+import { ArrowLink } from "@/components/reusable/arrowLink";
+import { MapPinIcon } from "@/icons";
+import { PROJECTS, PROJECT_CATEGORIES, type Project } from "@/contents/projects";
 
-// 
-const INITIAL_DISPLAY = 4;
+const ALL_LABEL = "All Projects";
+
+function ProjectCard({ project }: { project: Project }) {
+  const [imgSrc, setImgSrc] = useState(project.img);
+
+  return (
+    <div className="group flex flex-col bg-white border border-gray-100 hover:border-[#ffc631]/40 hover:shadow-lg rounded-2xl overflow-hidden transition-all duration-300">
+      {/* Image */}
+      <div className="relative w-full h-56 bg-gray-100 shrink-0 overflow-hidden">
+        <Image
+          src={imgSrc}
+          alt={project.title}
+          fill
+          loading="eager"
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          onError={() => setImgSrc("/fallback.jpg")}
+          className="object-cover group-hover:scale-105 transition-transform duration-500"
+        />
+
+        {/* Fallback icon, shows through if the image fails */}
+        <div className="absolute inset-0 -z-10 flex items-center justify-center">
+          <svg
+            className="w-16 h-16 text-gray-200"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={0.5}
+              d="M3 21h18M3 7l9-4 9 4M4 7v14M20 7v14M8 11h2v5H8zm6 0h2v5h-2z"
+            />
+          </svg>
+        </div>
+
+        {/* Category badge */}
+        <span className="absolute top-4 left-4 bg-[#1a1a2e]/90 text-[#ffc631] text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">
+          {project.category}
+        </span>
+
+        {/* Gold accent bar */}
+        <div className="absolute bottom-0 left-0 h-1.5 w-full bg-[#ffc631] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300" />
+      </div>
+
+      {/* Content */}
+      <div className="flex flex-col gap-3 p-6 flex-1">
+        <div className="flex items-center gap-2 text-gray-400 text-xs">
+          <MapPinIcon className="w-3.5 h-3.5 text-[#ffc631] shrink-0" />
+          {project.location}
+        </div>
+
+        <h3 className="text-lg font-extrabold text-[#1a1a2e] leading-snug group-hover:text-[#ffc631] transition-colors duration-200">
+          {project.title}
+        </h3>
+
+        <p className="text-gray-500 text-sm leading-relaxed line-clamp-3 flex-1">
+          {project.excerpt}
+        </p>
+
+        {/* <ArrowLink href={project.href} className="mt-1">
+          Details
+        </ArrowLink> */}
+      </div>
+    </div>
+  );
+}
 
 export function ProjectsListSection() {
-  const [showAll, setShowAll] = useState<boolean>(false);
+  const [activeCategory, setActiveCategory] = useState<string>(ALL_LABEL);
 
-  const displayedProjects = showAll ? PROJECTS : PROJECTS.slice(0, INITIAL_DISPLAY);
-  const hasMore = PROJECTS.length > INITIAL_DISPLAY;
+  const filters = useMemo(
+    () => [ALL_LABEL, ...PROJECT_CATEGORIES],
+    []
+  );
+
+  const countFor = (label: string) =>
+    label === ALL_LABEL
+      ? PROJECTS.length
+      : PROJECTS.filter((p) => p.category === label).length;
+
+  const visibleProjects =
+    activeCategory === ALL_LABEL
+      ? PROJECTS
+      : PROJECTS.filter((p) => p.category === activeCategory);
 
   return (
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
-          <div>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1a1a2e]">
-              Our <span className="text-[#ffc631]">Projects</span>
-            </h2>
-            <p className="text-gray-500 mt-2">
-              Successfully delivered{" "}
-              <span className="font-bold text-[#1a1a2e]">{PROJECTS.length}+</span>{" "}
-              projects across Nepal
-            </p>
-          </div>
-          <div className="text-sm text-gray-400">
-            {showAll ? (
-              <span className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-[#ffc631]" />
-                Showing all {PROJECTS.length} projects
-              </span>
-            ) : (
-              <span>
-                Showing {INITIAL_DISPLAY} of {PROJECTS.length} projects
-              </span>
-            )}
-          </div>
+        {/* Category filter */}
+        <div className="flex flex-wrap gap-3 mb-6">
+          {filters.map((label) => {
+            const isActive = label === activeCategory;
+            return (
+              <button
+                key={label}
+                type="button"
+                onClick={() => setActiveCategory(label)}
+                aria-pressed={isActive}
+                className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-bold uppercase tracking-wider transition-colors duration-200 ${isActive
+                  ? "bg-[#1a1a2e] text-[#ffc631]"
+                  : "bg-gray-100 text-gray-500 hover:bg-gray-200"
+                  }`}
+              >
+                {label}
+                <span
+                  className={`text-[10px] font-semibold px-1.5 py-0.5 rounded-full ${isActive
+                    ? "bg-[#ffc631] text-[#1a1a2e]"
+                    : "bg-white text-gray-400"
+                    }`}
+                >
+                  {countFor(label)}
+                </span>
+              </button>
+            );
+          })}
         </div>
 
-        {/* Projects List */}
-        <div className="flex flex-col divide-y divide-gray-100">
-          {displayedProjects.map((project, index: number) => (
-            <div
-              key={index}
-              className={`flex flex-col lg:flex-row items-start gap-10 py-16 group ${index % 2 !== 0 ? "lg:flex-row-reverse" : ""
-                }`}
-            >
-              {/* Image */}
-              <div className="w-full lg:w-1/2 h-72 sm:h-90 rounded-2xl overflow-hidden bg-gray-100 relative shrink-0">
-                <div className="relative w-full h-full">
-                  <Image
-                    src={project.img}
-                    alt={project.title}
-                    fill
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).src = "/fallback.jpg";
-                    }}
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                {/* <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                  <BuildingOverlayIcon className="w-24 h-24 text-gray-200/50" />
-                </div> */}
-                <div
-                  className={`absolute top-0 h-full w-1.5 bg-[#ffc631] ${index % 2 !== 0
-                    ? "right-0 rounded-r-2xl"
-                    : "left-0 rounded-l-2xl"
-                    }`}
-                />
-              </div>
+        {/* Result count */}
+        <p className="text-gray-400 text-sm mb-10">
+          Showing {visibleProjects.length} of {PROJECTS.length} projects
+        </p>
 
-              {/* Content */}
-              <div className="flex flex-col gap-5 justify-center py-4 lg:w-1/2">
-                <div className="flex items-center gap-2 text-gray-400 text-sm">
-                  <LocationIcon className="w-4 h-4 text-[#ffc631] shrink-0" />
-                  {project.location}
-                </div>
-
-                <h2 className="text-2xl sm:text-3xl font-extrabold text-[#1a1a2e] leading-snug group-hover:text-[#ffc631] transition-colors duration-200">
-                  {project.title}
-                </h2>
-
-                <div className="w-12 h-0.5 bg-[#ffc631]" />
-
-                <p className="text-gray-500 leading-relaxed text-sm">
-                  {project.excerpt}
-                </p>
-
-                {/* <ArrowLink href={project.href}>Learn More</ArrowLink> */}
-              </div>
-            </div>
+        {/* Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {visibleProjects.map((project) => (
+            <ProjectCard key={project.title} project={project} />
           ))}
         </div>
-
-        {/* View More Button */}
-        {hasMore && (
-          <div className="flex flex-col items-center gap-4 mt-16 pt-8 border-t border-gray-100">
-            <button
-              onClick={() => setShowAll(!showAll)}
-              className="group flex items-center gap-3 px-10 py-4 bg-[#1a1a2e] hover:bg-[#ffc631] text-white hover:text-[#1a1a2e] font-bold rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
-            >
-              <span>{showAll ? "Show Less" : "View All Projects"}</span>
-              <ChevronIcon
-                className={`w-5 h-5 transition-transform duration-300 ${showAll ? "rotate-180" : ""
-                  }`}
-              />
-            </button>
-            <p className="text-sm text-gray-400">
-              {showAll
-                ? `Showing all ${PROJECTS.length} projects`
-                : `Showing ${INITIAL_DISPLAY} of ${PROJECTS.length} projects`}
-            </p>
-          </div>
-        )}
       </div>
     </section>
   );

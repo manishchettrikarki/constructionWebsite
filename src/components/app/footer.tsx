@@ -124,14 +124,14 @@ export function Footer() {
           </p>
           <div className="flex gap-4">
             {[
-              { icon: <FacebookIcon />, label: "Facebook" },
-              { icon: <InstagramIcon />, label: "Instagram" },
-              { icon: <TwitterIcon fill="white" />, label: "Twitter" },
-              { icon: <WhatsAppIcon />, label: "WhatsApp" },
+              { icon: <FacebookIcon />, label: "Facebook", link: "https://www.facebook.com/kallistoengineeringconsultancy" },
+              // { icon: <InstagramIcon />, label: "Instagram" },
+              // { icon: <TwitterIcon fill="white" />, label: "Twitter" },
+              // { icon: <WhatsAppIcon />, label: "WhatsApp" },
             ].map((s) => (
               <a
                 key={s.label}
-                href="#"
+                href={s.link}
                 aria-label={s.label}
                 className="flex items-center justify-center w-10 h-10 rounded-full text-[#001f3f] hover:scale-110 transition-transform"
               >

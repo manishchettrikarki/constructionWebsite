@@ -25,8 +25,8 @@ export function Hero() {
     return () => observer.disconnect();
   }, []);
 
-  const count128 = useCountUp(128, 1800, visible);
-  const count4253 = useCountUp(22, 2200, visible);
+  const count128 = useCountUp(30, 1800, visible);
+  const count4253 = useCountUp(14, 2200, visible);
 
   return (
     <section className="bg-[#1a1a2e] relative overflow-hidden min-h-[90vh] flex items-center">

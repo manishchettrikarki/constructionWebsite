@@ -36,3 +36,4 @@ export * from "./icons/socialIcon";
 export * from "./icons/pulleyWheel";
 export * from "./icons/liftWeight";
 export * from "./icons/liftPerson";
+export * from "./icons/mapPin";

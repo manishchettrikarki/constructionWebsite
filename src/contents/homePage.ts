@@ -100,28 +100,28 @@ export const projectsContent = {
       id: 1,
       title: "Kathmandu-Terai/Madhesh Expressway Road Project",
       location: "Government of Nepal, Nepalese Army",
-      image: "/images/projects/p1.avif",
+      image: "/images/projects/terai-madhesh-road.jpg",
       href: "/projects",
     },
     {
       id: 2,
       title: "Dudhuwa Khola Bridge (70m)",
       location: "Government of Nepal, Dudhuwa Rural Municipality",
-      image: "/images/projects/p2.jpg",
+      image: "/images/projects/bridge.jpg",
       href: "/projects",
     },
     {
       id: 3,
       title: "Central Infectious Disease Hospital, Teku",
-      location: "Department of Urban Development and Building Construction",
-      image: "/images/projects/p3.webp",
+      location: "Teku, Kathmandu, Nepal",
+      image: "/images/projects/infectious-hospital.jpg",
       href: "/projects",
     },
     {
       id: 4,
       title: "Pokhara Wastewater Management Master Plan",
-      location: "Yachiyo Engineering Co., Japan / JICA",
-      image: "/images/projects/p4.webp",
+      location: "Pokhara, Nepal",
+      image: "/images/projects/waste-management.jpg",
       href: "/projects",
     },
   ],
@@ -154,10 +154,10 @@ export const spotsContent = {
 
   // Nepal locations (approx positions for map)
   locations: [
-    { name: "Kathmandu", x: 55, y: 52 },
-    { name: "Pokhara", x: 40, y: 50 },
-    { name: "Banke", x: 20, y: 60 },
-    { name: "Chitwan", x: 38, y: 58 },
+    { name: "Banke", x: 25, y: 45 },
+    { name: "Pokhara", x: 42, y: 45 },
+    { name: "Chitwan", x: 58, y: 68 },
+    { name: "Kathmandu", x: 50, y: 55 },
   ],
 };
 

@@ -12,7 +12,7 @@ export function WrenchIcon(props: SVGProps<SVGSVGElement>) {
       stroke="#FFB578"
       {...props}
     >
-      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+      <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
       <g
         id="SVGRepo_tracerCarrier"
         strokeLinecap="round"

@@ -87,10 +87,16 @@ export function Header() {
 
         {/* Mobile toggle */}
         <button
-          className="lg:hidden text-white"
-          onClick={() => setMobileOpen(!mobileOpen)}
+          type="button"
+          aria-label={mobileOpen ? "Close menu" : "Open menu"}
+          className="lg:hidden flex items-center justify-center text-white z-50"
+          onClick={() => setMobileOpen((prev) => !prev)}
         >
-          {mobileOpen ? <CrossIcon /> : <MenuIcon />}
+          {mobileOpen ? (
+            <CrossIcon className="w-6 h-6" />
+          ) : (
+            <MenuIcon className="w-6 h-6" />
+          )}
         </button>
       </div>
 

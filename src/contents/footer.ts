@@ -32,7 +32,7 @@ export const footerContent = {
   socialLinks: [
     {
       label: "Facebook",
-      href: "https://facebook.com/kallistoengineering",
+      href: "https://www.facebook.com/kallistoengineeringconsultancy",
     },
     {
       label: "Instagram",
