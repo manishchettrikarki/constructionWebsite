@@ -3,7 +3,8 @@ export type ProjectCategory =
     | "Roads & Bridges"
     | "Water Resources"
     | "GIS Mapping"
-    | "Buildings & Infrastructure";
+    | "Buildings & Infrastructure"
+    | "International Projects";
 
 export interface Project {
     title: string;
@@ -285,6 +286,26 @@ export const PROJECTS: Project[] = [
         href: "/projects/single-project",
         category: "Buildings & Infrastructure",
     },
+    {
+        title:
+            "Socio-Economic Design Survey",
+        location: "Yachiyo Engineering Co. Ltd. Tokyo, Japan. JICA",
+        excerpt:
+            "Social Condition Survey for the project for Development of Master Plan for Wastewater Management in Pokhara Metropolitan City",
+        img: "/images/projects/placeholder.jpg",
+        href: "/projects/social-condition-survey-pokhara",
+        category: "International Projects",
+    },
+    {
+        title:
+            "SEA Report",
+        location: "Pacific Consultants Co. Ltd and JICA",
+        excerpt:
+            "Project for Capacity Development on Flood Control for Disaster Risk Reduction in Sunsari and Morang Districts",
+        img: "/images/projects/placeholder.jpg",
+        href: "/projects/flood-control-sunsari-morang",
+        category: "International Projects",
+    },
 ];
 
 // Derived list of unique categories, in a sensible fixed display order
@@ -295,6 +316,7 @@ const CATEGORY_ORDER: ProjectCategory[] = [
     "Water Resources",
     "GIS Mapping",
     "Buildings & Infrastructure",
+    "International Projects",
 ];
 
 export const PROJECT_CATEGORIES: ProjectCategory[] = CATEGORY_ORDER.filter(

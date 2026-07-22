@@ -4,6 +4,7 @@ import { ServicesHero } from "@/components/views/services/heroSection";
 import { ServicesListSection } from "@/components/views/services/listSection";
 import { ServicesNumbersSection } from "@/components/views/services/numberSection";
 import { ServicesSkillsSection } from "@/components/views/services/skillsSection";
+import { SERVICES } from "@/contents/services";
 import {
   breadcrumbJsonLd,
   buildMetadata,
@@ -11,7 +12,7 @@ import {
   serviceJsonLd,
   webPageJsonLd,
 } from "@/lib/seo";
-import { PAGE_HEROES, SERVICES } from "@/utils/constant";
+import { PAGE_HEROES } from "@/utils/constant";
 import { Metadata } from "next";
 import Script from "next/script";
 

@@ -21,7 +21,7 @@ export interface SocialLink {
 export const CONTACT_INFO: ContactCard[] = [
     {
         title: "Address",
-        content: "Mid-Baneshwor, Balbhadra Marg, Kathmandu - 31, Nepal",
+        content: "Ghattekulo, Maitidevi, Kathmandu, Nepal",
         icon: LocationIcon,
         links: null,
     },
@@ -40,7 +40,6 @@ export const CONTACT_INFO: ContactCard[] = [
         icon: PhoneIcon,
         links: [
             { label: "+977-9841666927", href: "tel:+9779841666927" },
-            { label: "+977-1-4465553", href: "tel:+97714465553" },
         ],
     },
 ];

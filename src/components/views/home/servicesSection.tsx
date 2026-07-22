@@ -1,3 +1,4 @@
+import { Btn } from "@/components/reusable/button";
 import { SectionLabel } from "@/components/reusable/sectionLabel";
 import { servicesContent } from "@/contents/homePage";
 
@@ -36,6 +37,10 @@ export function Services() {
             </li>
           ))}
         </ul>
+
+        <div className="flex justify-center mt-14 lg:mt-16">
+          <Btn href="/services">See All Services</Btn>
+        </div>
       </div>
     </section>
   );

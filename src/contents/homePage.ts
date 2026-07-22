@@ -41,49 +41,49 @@ export const servicesContent = {
     {
       id: 1,
       number: "01",
-      title: "Engineering & Architectural Consultancy",
+      title: "Transportation",
       description:
-        "Planning, feasibility studies, detailed design, supervision and management of engineering and architectural projects.",
+        "We provide comprehensive transportation engineering services, including planning, feasibility studies, detailed design, traffic engineering, construction supervision, and project management to develop safe, efficient, and sustainable transport networks.",
       href: "/services/engineering-consultancy",
     },
     {
       id: 2,
       number: "02",
-      title: "Transportation Engineering",
+      title: "Highways and Roads",
       description:
-        "Highways, roads, bridges, airports, railways and metro infrastructure planning and design.",
+        "Our expertise covers the planning, survey, geometric design, pavement engineering, rehabilitation, upgrading, and construction supervision of highways, rural roads, and urban road networks in accordance with national and international standards.",
       href: "/services/transportation-engineering",
     },
     {
       id: 3,
       number: "03",
-      title: "Hydropower & Energy",
+      title: "Bridges",
       description:
-        "Feasibility and engineering studies for hydropower development and energy infrastructure.",
+        "We offer complete bridge engineering services, including feasibility studies, structural analysis and design, inspection, rehabilitation, and construction supervision for reinforced concrete, steel, suspension, and composite bridges.",
       href: "/services/hydropower-energy",
     },
     {
       id: 4,
       number: "04",
-      title: "Water Supply & Urban Development",
+      title: "Airports",
       description:
-        "Design and management of water supply, sanitation, wastewater and urban infrastructure systems.",
+        "Kallisto provides consultancy services for airport planning, runway and taxiway design, terminal infrastructure, drainage systems, and aviation support facilities, ensuring compliance with international aviation standards.",
       href: "/services/water-urban-development",
     },
     {
       id: 5,
       number: "05",
-      title: "Environmental & Social Studies",
+      title: "Railways and Metro",
       description:
-        "EIA, IEE, geological investigations, and socio-economic and rural community development studies.",
+        "We deliver engineering solutions for railway and metro projects, including route planning, alignment studies, station planning, structural design, and infrastructure development for efficient and sustainable public transportation.",
       href: "/services/environmental-social-studies",
     },
     {
       id: 6,
       number: "06",
-      title: "Water Resources, Survey & GIS",
+      title: "Hydropower and Energy",
       description:
-        "Irrigation, river basin planning, DGPS/topographic survey, GIS mapping and project management.",
+        "Our team specializes in hydropower and renewable energy projects, offering feasibility studies, detailed engineering design, environmental assessments, construction supervision, and project management for sustainable energy development.",
       href: "/services/water-resources-survey-gis",
     },
   ],

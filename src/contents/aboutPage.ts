@@ -10,7 +10,7 @@ export const ABOUT_INTRO = {
     },
 
     description:
-        "Established in 2074 BS, Kallisto Engineering Consultancy Pvt. Ltd. is a multidisciplinary engineering consultancy based in Mid-Baneshwor, Kathmandu. We provide professional services in planning, feasibility studies, detailed engineering design, surveying, project supervision, environmental consulting, GIS mapping, and project management. Our experienced team is committed to delivering innovative, practical, and sustainable engineering solutions that meet the highest standards of quality and professionalism.",
+        "Established in 2074 BS, Kallisto Engineering Consultancy Pvt. Ltd. is a multidisciplinary engineering consultancy based in Ghattekulo, Maitidevi, Kathmandu. We provide professional services in planning, feasibility studies, detailed engineering design, surveying, project supervision, environmental consulting, GIS mapping, and project management. Our experienced team is committed to delivering innovative, practical, and sustainable engineering solutions that meet the highest standards of quality and professionalism.",
 
     checklist: [
         "Comprehensive engineering consultancy services",

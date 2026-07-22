@@ -1,5 +1,5 @@
 import { Subtitle } from "@/components/reusable/subtitle";
-import { SERVICES } from "@/utils/constant";
+import { SERVICES } from "@/contents/services";
 
 export function ServicesListSection() {
   return (

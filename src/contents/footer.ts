@@ -4,15 +4,15 @@ export const footerContent = {
     name: "Kallisto",
     highlight: "Engineering",
     description:
-      "Based in Mid-Baneshwor, Kathmandu, Kallisto Engineering Consultancy delivers planning, design, survey and project management solutions across Nepal — spanning transportation, hydropower, water resources and urban development.",
+      "Based in Ghattekulo, Maitidevi, Kathmandu, Kallisto Engineering Consultancy delivers planning, design, survey and project management solutions across Nepal — spanning transportation, hydropower, water resources and urban development.",
     href: "/",
     logo: "images/logo.png",
   },
 
   contacts: {
     title: "Contact Us",
-    phones: ["+977-1-4465553", "+977-9841666927"],
-    address: ["Mid-Baneshwor, Balbhadra Marg", "Kathmandu - 31, Nepal"],
+    phones: ["+977-9841666927"],
+    address: ["Ghattekulo, Maitidevi, Kathmandu, Nepal"],
   },
 
   companyLinks: [

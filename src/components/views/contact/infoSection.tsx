@@ -88,11 +88,10 @@ export function ContactInfoSection() {
           <div className="w-full h-96">
             <iframe
               title={CONTACT_CONTENT.mapTitle}
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3531.770742313285!2d85.3473017!3d27.7243639!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19fdac58fbb5%3A0x2d81bd028f50e33e!2sKallisto%20Engineering%20Consultancy%20Pvt.%20Ltd.!5e0!3m2!1sen!2snp!4v1784014244984!5m2!1sen!2snp"
+              src="https://maps.google.com/maps?q=27.700623,85.334009&z=18&output=embed"
               className="w-full h-full border-0 grayscale hover:grayscale-0 transition-all duration-500"
-              allowFullScreen
               loading="lazy"
-              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
             />
           </div>
           <div className="absolute top-0 left-0 w-1.5 h-full bg-[#ffc631] rounded-l-2xl pointer-events-none" />

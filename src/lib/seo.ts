@@ -84,7 +84,7 @@ export function orgJsonLd() {
     ],
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Mid-Baneshwor, Balbhadra Marg",
+      streetAddress: "Ghattekulo, Maitidevi, Kathmandu, Nepal",
       addressLocality: "Kathmandu",
       addressRegion: "Bagmati Province",
       addressCountry: "NP",
@@ -110,7 +110,7 @@ export function localBusinessJsonLd() {
     email: "kallistoengineering@gmail.com",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Mid-Baneshwor, Balbhadra Marg",
+      streetAddress: "Ghattekulo, Maitidevi, Kathmandu, Nepal",
       addressLocality: "Kathmandu - 31",
       addressRegion: "Bagmati Province",
       addressCountry: "NP",
@@ -280,7 +280,7 @@ export const PAGE_SEO: Record<string, PageSEO> = {
   contact: {
     title: "Contact Us",
     description:
-      "Get in touch with Kallisto Engineering Consultancy. Call +977-9841666927, email kallistoengineering@gmail.com or visit us in Mid-Baneshwor, Kathmandu.",
+      "Get in touch with Kallisto Engineering Consultancy. Call +977-9841666927, email kallistoengineering@gmail.com or visit us in Ghattekulo, Maitidevi, Kathmandu, Nepal",
     slug: "/contact",
     keywords: [
       "contact Kallisto Engineering",
