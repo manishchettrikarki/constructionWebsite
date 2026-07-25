@@ -1,14 +1,54 @@
-// components/contact/ContactInfoSection.tsx
 "use client";
 
 import { useState } from "react";
 import { Subtitle } from "@/components/reusable/subtitle";
-import { CheckIcon, SocialIcon } from "@/icons";
-import { CONTACT_CONTENT, CONTACT_INFO, SOCIAL_LINKS } from "@/contents/contact";
+import { CheckIcon } from "@/icons";
+import { CONTACT_CONTENT, CONTACT_INFO } from "@/contents/contact";
 import type { ContactCard } from "@/contents/contact";
+import type { PublicContactDetails } from "@/types/public";
 
+function telHref(phone: string) {
+  return `tel:${phone.replace(/[^\d+]/g, "")}`;
+}
 
-export function ContactInfoSection() {
+/**
+ * Merges the live contact details (from Supabase, via the page) into
+ * the card shapes/icons defined in contents/contact.ts — icons and
+ * card titles stay as authored there, only the displayed content/links
+ * become dynamic.
+ */
+function buildCards(contact: PublicContactDetails): ContactCard[] {
+  return CONTACT_INFO.map((card) => {
+    if (card.title === "Address") {
+      return { ...card, content: contact.address || null };
+    }
+    if (card.title === "Email") {
+      return {
+        ...card,
+        content: null,
+        links: contact.email
+          ? [{ label: contact.email, href: `mailto:${contact.email}` }]
+          : [],
+      };
+    }
+    if (card.title === "Phone") {
+      return {
+        ...card,
+        content: null,
+        links: contact.phone
+          ? [{ label: contact.phone, href: telHref(contact.phone) }]
+          : [],
+      };
+    }
+    return card;
+  });
+}
+
+export function ContactInfoSection({
+  contact,
+}: {
+  contact: PublicContactDetails;
+}) {
   const [form, setForm] = useState({
     name: "",
     tel: "",
@@ -27,6 +67,8 @@ export function ContactInfoSection() {
   const inputClass =
     "w-full border border-gray-200 rounded-lg px-4 py-3.5 text-sm text-[#1a1a2e] placeholder-gray-400 focus:outline-none focus:border-[#ffc631] transition-colors bg-white";
 
+  const cards = buildCards(contact);
+
   return (
     <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -43,7 +85,7 @@ export function ContactInfoSection() {
 
           {/* Right: 3 info cards - takes 3 columns */}
           <div className="lg:col-span-3 grid sm:grid-cols-3 gap-4">
-            {CONTACT_INFO.map((card: ContactCard) => {
+            {cards.map((card) => {
               const Icon = card.icon;
               return (
                 <div
@@ -53,17 +95,14 @@ export function ContactInfoSection() {
                   <div className="w-12 h-12 rounded-xl bg-[#ffc631]/10 flex items-center justify-center shrink-0">
                     <Icon className="w-6 h-6 text-[#ffc631]" />
                   </div>
-
                   <h4 className="font-bold text-[#1a1a2e] text-sm">
                     {card.title}
                   </h4>
-
                   {card.content && (
                     <p className="text-gray-500 text-sm leading-relaxed">
                       {card.content}
                     </p>
                   )}
-
                   {card.links && (
                     <div className="flex flex-col gap-1">
                       {card.links.map((link) => (
@@ -156,31 +195,8 @@ export function ContactInfoSection() {
               {CONTACT_CONTENT.submitButton}
             </button>
           </form>
-
-          {/* Social links */}
-          {/* <div className="flex flex-col sm:flex-row items-center gap-3 pt-6 mt-6 border-t border-gray-100">
-            <span className="text-xs font-bold uppercase tracking-wider text-gray-400">
-              {CONTACT_CONTENT.followUs}
-            </span>
-            <div className="flex items-center gap-3">
-              {SOCIAL_LINKS.map((social) => {
-                const Icon = social.icon;
-                return (
-                  <a
-                    key={social.name}
-                    href={social.href}
-                    aria-label={social.name}
-                    className="w-9 h-9 rounded-full border border-gray-200 flex items-center justify-center text-gray-400 hover:text-[#ffc631] hover:border-[#ffc631] transition-colors duration-200"
-                  >
-                    <Icon className="w-4 h-4" />
-                  </a>
-                );
-              })}
-            </div>
-          </div> */}
         </div>
       </div>
     </section>
   );
 }
-

@@ -4,9 +4,9 @@ export const footerContent = {
     name: "Kallisto",
     highlight: "Engineering",
     description:
-      "Based in Ghattekulo, Maitidevi, Kathmandu, Kallisto Engineering Consultancy delivers planning, design, survey and project management solutions across Nepal — spanning transportation, hydropower, water resources and urban development.",
+      "Based in Ghattekulo, Maitidevi, Kathmandu, Kallisto Engineering Consultancy delivers planning, design, survey and project management solutions across Nepal spanning transportation, hydropower, water resources and urban development.",
     href: "/",
-    logo: "images/logo.png",
+    logo: "/images/logo.png",
   },
 
   contacts: {

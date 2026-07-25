@@ -1,5 +1,6 @@
 import { ContactHero } from "@/components/views/contact/heroSection";
 import { ContactInfoSection } from "@/components/views/contact/infoSection";
+import { getContactDetails } from "@/lib/data/contact";
 import {
   breadcrumbJsonLd,
   buildMetadata,
@@ -14,11 +15,13 @@ import Script from "next/script";
 export const metadata: Metadata = buildMetadata(PAGE_SEO.contact);
 
 //
-export default function ContactPage() {
+export default async function ContactPage() {
+  const contact = await getContactDetails();
+
   return (
     <div>
       <ContactHero />
-      <ContactInfoSection />
+      <ContactInfoSection contact={contact} />
 
       {/*  */}
       <Script

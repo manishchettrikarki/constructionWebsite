@@ -4,11 +4,11 @@ import { useMemo, useState } from "react";
 import Image from "next/image";
 import { ArrowLink } from "@/components/reusable/arrowLink";
 import { MapPinIcon } from "@/icons";
-import { PROJECTS, PROJECT_CATEGORIES, type Project } from "@/contents/projects";
+import { deriveCategories, type PublicProject } from "@/lib/data/projects.types";
 
 const ALL_LABEL = "All Projects";
 
-function ProjectCard({ project }: { project: Project }) {
+function ProjectCard({ project }: { project: PublicProject }) {
   const [imgSrc, setImgSrc] = useState(project.img);
 
   return (
@@ -19,8 +19,6 @@ function ProjectCard({ project }: { project: Project }) {
           src={imgSrc}
           alt={project.title}
           fill
-          loading="eager"
-          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
           onError={() => setImgSrc("/fallback.jpg")}
           className="object-cover group-hover:scale-105 transition-transform duration-500"
         />
@@ -46,6 +44,12 @@ function ProjectCard({ project }: { project: Project }) {
         <span className="absolute top-4 left-4 bg-[#1a1a2e]/90 text-[#ffc631] text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">
           {project.category}
         </span>
+
+        {project.status === "Ongoing" && (
+          <span className="absolute top-4 right-4 bg-amber-400 text-[#1a1a2e] text-[10px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full">
+            Ongoing
+          </span>
+        )}
 
         {/* Gold accent bar */}
         <div className="absolute bottom-0 left-0 h-1.5 w-full bg-[#ffc631] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300" />
@@ -74,23 +78,25 @@ function ProjectCard({ project }: { project: Project }) {
   );
 }
 
-export function ProjectsListSection() {
+export function ProjectsListSection({
+  projects,
+}: {
+  projects: PublicProject[];
+}) {
   const [activeCategory, setActiveCategory] = useState<string>(ALL_LABEL);
 
-  const filters = useMemo(
-    () => [ALL_LABEL, ...PROJECT_CATEGORIES],
-    []
-  );
+  const categories = useMemo(() => deriveCategories(projects), [projects]);
+  const filters = useMemo(() => [ALL_LABEL, ...categories], [categories]);
 
   const countFor = (label: string) =>
     label === ALL_LABEL
-      ? PROJECTS.length
-      : PROJECTS.filter((p) => p.category === label).length;
+      ? projects.length
+      : projects.filter((p) => p.category === label).length;
 
   const visibleProjects =
     activeCategory === ALL_LABEL
-      ? PROJECTS
-      : PROJECTS.filter((p) => p.category === activeCategory);
+      ? projects
+      : projects.filter((p) => p.category === activeCategory);
 
   return (
     <section className="py-24 bg-white">
@@ -105,17 +111,19 @@ export function ProjectsListSection() {
                 type="button"
                 onClick={() => setActiveCategory(label)}
                 aria-pressed={isActive}
-                className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-bold uppercase tracking-wider transition-colors duration-200 ${isActive
-                  ? "bg-[#1a1a2e] text-[#ffc631]"
-                  : "bg-gray-100 text-gray-500 hover:bg-gray-200"
-                  }`}
+                className={`inline-flex items-center gap-2 rounded-full px-4 py-2 text-xs font-bold uppercase tracking-wider transition-colors duration-200 ${
+                  isActive
+                    ? "bg-[#1a1a2e] text-[#ffc631]"
+                    : "bg-gray-100 text-gray-500 hover:bg-gray-200"
+                }`}
               >
                 {label}
                 <span
-                  className={`text-[10px] font-semibold px-1.5 py-0.5 rounded-full ${isActive
-                    ? "bg-[#ffc631] text-[#1a1a2e]"
-                    : "bg-white text-gray-400"
-                    }`}
+                  className={`text-[10px] font-semibold px-1.5 py-0.5 rounded-full ${
+                    isActive
+                      ? "bg-[#ffc631] text-[#1a1a2e]"
+                      : "bg-white text-gray-400"
+                  }`}
                 >
                   {countFor(label)}
                 </span>
@@ -126,15 +134,21 @@ export function ProjectsListSection() {
 
         {/* Result count */}
         <p className="text-gray-400 text-sm mb-10">
-          Showing {visibleProjects.length} of {PROJECTS.length} projects
+          Showing {visibleProjects.length} of {projects.length} projects
         </p>
 
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {visibleProjects.map((project) => (
-            <ProjectCard key={project.title} project={project} />
+            <ProjectCard key={project.id} project={project} />
           ))}
         </div>
+
+        {projects.length === 0 && (
+          <p className="text-center text-gray-400 py-20">
+            No projects to show yet.
+          </p>
+        )}
       </div>
     </section>
   );

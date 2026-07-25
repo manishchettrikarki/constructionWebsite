@@ -54,6 +54,7 @@ export const MANAGING_DIRECTOR_MESSAGE = {
         signature: "/img/signature.png",
         image: "/images/managingDirector.jpg",
         alt: "Managing Director of Kallisto Engineering Consultancy",
+        email:"dipesharyal12@gmail.com",
     },
 };
 

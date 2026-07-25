@@ -44,6 +44,9 @@ export function ManagingDirectorSection() {
                             <p className="text-[#ffc631] font-medium">
                                 {person.designation}
                             </p>
+                            <a href={`mailto:${person.email}`} className="text-gray-500 font-medium">
+                                {person.email}
+                            </a>
 
                             <p className="text-gray-500">
                                 {person.company}

@@ -1,4 +1,5 @@
 import { footerContent } from "@/contents/footer";
+import { getContactDetails } from "@/lib/data/contact";
 import {
   ChevronRightIcon,
   FacebookIcon,
@@ -7,8 +8,14 @@ import {
   WhatsAppIcon,
 } from "@/icons";
 
-export function Footer() {
+function telHref(phone: string) {
+  return `tel:${phone.replace(/[^\d+]/g, "")}`;
+}
+
+export async function Footer() {
   const year = new Date().getFullYear();
+  const contact = await getContactDetails();
+
   return (
     <footer className="bg-[#001f3f] text-white pt-20 pb-16">
       <div className="max-w-322.5 mx-auto px-5">
@@ -42,27 +49,25 @@ export function Footer() {
             <div className="flex flex-col gap-4 text-sm text-gray-300">
               <div className="flex gap-2.5 items-start">
                 <span className="text-[#ffc631] mt-0.5">📞</span>
-                <div className="flex flex-col gap-1">
-                  <a
-                    href="tel:+13136453395"
-                    className="hover:text-white transition-colors"
-                  >
-                    {footerContent.contacts.phones[0]}
-                  </a>
-                  <a
-                    href="tel:+14699702609"
-                    className="hover:text-white transition-colors"
-                  >
-                    {footerContent.contacts.phones[1]}
-                  </a>
-                </div>
+                <a
+                  href={telHref(contact.phone)}
+                  className="hover:text-white transition-colors"
+                >
+                  {contact.phone}
+                </a>
               </div>
               <div className="flex gap-2.5 items-start">
                 <span className="text-[#ffc631] mt-0.5">📍</span>
-                <div className="flex flex-col gap-1">
-                  <span>{footerContent.contacts.address[0]}</span>
-                  <span>{footerContent.contacts.address[1]}</span>
-                </div>
+                <span>{contact.address}</span>
+              </div>
+              <div className="flex gap-2.5 items-start">
+                <span className="text-[#ffc631] mt-0.5">✉️</span>
+                <a
+                  href={`mailto:${contact.email}`}
+                  className="hover:text-white transition-colors"
+                >
+                  {contact.email}
+                </a>
               </div>
             </div>
           </div>
@@ -92,26 +97,18 @@ export function Footer() {
             <h4 className="font-bold text-sm uppercase tracking-widest mb-3 font-['Archivo',sans-serif]">
               {footerContent.newsletter.title}
             </h4>
-            <p className="text-gray-400 text-sm mb-5">
-              {footerContent.newsletter.description}
-            </p>
-            <div className="flex mt-5">
-              <input
-                className="flex-1 h-13.5 bg-transparent border border-white/30 border-r-0 px-4 text-sm text-white placeholder:text-gray-500 focus:border-[#ffc631] outline-none transition-colors"
-                placeholder={footerContent.newsletter.placeholder}
+
+            <div className="bg-white rounded-lg overflow-hidden">
+              <iframe
+                title="Facebook Page"
+                src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fkallistoengineeringconsultancy&tabs=timeline&width=320&height=300&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true"
+                width="100%"
+                height="150"
+                style={{ border: "none", overflow: "hidden" }}
+                scrolling="no"
+                frameBorder="0"
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
               />
-              <button className="w-13.5 h-13.5 bg-[#ffc631] flex items-center justify-center shrink-0 hover:bg-[#ffd464] transition-colors">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#001f3f"
-                  strokeWidth="2"
-                  className="w-5 h-5"
-                >
-                  <line x1="22" y1="2" x2="11" y2="13" />
-                  <polygon points="22 2 15 22 11 13 2 9 22 2" />
-                </svg>
-              </button>
             </div>
           </div>
         </div>
@@ -131,7 +128,7 @@ export function Footer() {
             ].map((s) => (
               <a
                 key={s.label}
-                href={s.link}
+                href="#"
                 aria-label={s.label}
                 className="flex items-center justify-center w-10 h-10 rounded-full text-[#001f3f] hover:scale-110 transition-transform"
               >

@@ -4,7 +4,7 @@ import { ServicesHero } from "@/components/views/services/heroSection";
 import { ServicesListSection } from "@/components/views/services/listSection";
 import { ServicesNumbersSection } from "@/components/views/services/numberSection";
 import { ServicesSkillsSection } from "@/components/views/services/skillsSection";
-import { SERVICES } from "@/contents/services";
+import { getServices } from "@/lib/data/services";
 import {
   breadcrumbJsonLd,
   buildMetadata,
@@ -18,8 +18,10 @@ import Script from "next/script";
 
 export const metadata: Metadata = buildMetadata(PAGE_SEO.services);
 
-export default function ServicesPage() {
-  const serviceSchemas = SERVICES.map((s) =>
+export default async function ServicesPage() {
+  const services = await getServices();
+
+  const serviceSchemas = services.map((s) =>
     serviceJsonLd({
       name: s.title,
       description: s.desc,
@@ -30,7 +32,7 @@ export default function ServicesPage() {
   return (
     <>
       <ServicesHero />
-      <ServicesListSection />
+      <ServicesListSection services={services} />
       <ServicesNumbersSection />
       <ServicesExpertsSection />
       {/* <ServicesSkillsSection /> */}

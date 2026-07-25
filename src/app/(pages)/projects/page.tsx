@@ -1,5 +1,6 @@
 import { ProjectsHero } from "@/components/views/projects/heroSection";
 import { ProjectsListSection } from "@/components/views/projects/listSection";
+import { getProjects } from "@/lib/data/projects";
 import {
   breadcrumbJsonLd,
   buildMetadata,
@@ -12,11 +13,13 @@ import Script from "next/script";
 
 export const metadata: Metadata = buildMetadata(PAGE_SEO.projects);
 
-export default function ProjectsPage() {
+export default async function ProjectsPage() {
+  const projects = await getProjects();
+
   return (
     <div>
       <ProjectsHero />
-      <ProjectsListSection />
+      <ProjectsListSection projects={projects} />
 
       {/*  */}
       <Script

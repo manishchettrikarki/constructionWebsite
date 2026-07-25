@@ -196,3 +196,9 @@ export const PAGE_HEROES = {
   },
 };
 
+export const COMPANY_INFO = {
+  name:"Kallisto Engineering Consultancy",
+  phone: "+977-9841666927",
+  email: "kallistoengineering@gmail.com",
+  registeredAddress: "Ghattekulo, Maitidevi, Kathmandu, Nepal"
+};
