@@ -29,7 +29,11 @@ export async function Footer() {
             >
               <span className="w-12 h-12 rounded-sm flex items-center justify-center text-[#001f3f] font-black text-xs">
                 {/* {headerContent.companyName} */}
-                <img src={footerContent.brand.logo} alt={footerContent.brand.name} className="w-full h-full object-contain" />
+                <img
+                  src={footerContent.brand.logo}
+                  alt={footerContent.brand.name}
+                  className="w-full h-full object-contain"
+                />
               </span>
               {footerContent.brand.name}{" "}
               <span className="text-[#0da574]">
@@ -119,9 +123,13 @@ export async function Footer() {
             <span>{footerContent.copyright.text}</span>
             <span className="ml-4">All rights reserved Copyrights {year}</span>
           </p>
-          <div className="flex gap-4">
+          {/* <div className="flex gap-4">
             {[
-              { icon: <FacebookIcon />, label: "Facebook", link: "https://www.facebook.com/kallistoengineeringconsultancy" },
+              {
+                icon: <FacebookIcon />,
+                label: "Facebook",
+                link: "https://www.facebook.com/kallistoengineeringconsultancy",
+              },
               // { icon: <InstagramIcon />, label: "Instagram" },
               // { icon: <TwitterIcon fill="white" />, label: "Twitter" },
               // { icon: <WhatsAppIcon />, label: "WhatsApp" },
@@ -135,7 +143,7 @@ export async function Footer() {
                 {s.icon}
               </a>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>
