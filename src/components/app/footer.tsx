@@ -88,7 +88,7 @@ export async function Footer() {
                     href={link.href}
                     className="flex items-center gap-2 hover:text-[#ffc631] transition-colors font-semibold uppercase tracking-wider text-xs font-['Archivo',sans-serif]"
                   >
-                    <ChevronRightIcon className="w-2.5 h-2.5 text-[#ffc631]" />{" "}
+                    {/* <ChevronRightIcon className="w-2.5 h-2.5 text-[#ffc631]" />{" "} */}
                     {link.label}
                   </a>
                 </li>
@@ -106,8 +106,8 @@ export async function Footer() {
               <iframe
                 title="Facebook Page"
                 src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fkallistoengineeringconsultancy&tabs=timeline&width=320&height=300&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true"
-                width="100%"
-                height="150"
+                width="320"
+                height="130"
                 style={{ border: "none", overflow: "hidden" }}
                 scrolling="no"
                 frameBorder="0"

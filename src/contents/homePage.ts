@@ -168,10 +168,11 @@ export const spotsContent = {
 
   // Nepal locations (approx positions for map)
   locations: [
-    { name: "Banke", x: 25, y: 45 },
-    { name: "Pokhara", x: 42, y: 45 },
-    { name: "Chitwan", x: 58, y: 68 },
-    { name: "Kathmandu", x: 50, y: 55 },
+    { name: "Banke", x: 30.8, y: 54.2 },
+    { name: "Pokhara", x: 48.9, y: 52.8 },
+    { name: "Chitwan", x: 51.7, y: 63.5 },
+    { name: "Kathmandu", x: 59.3, y: 60.6 },
+    { name: "Terhathum", x: 76.4, y: 69.7 },
   ],
 };
 

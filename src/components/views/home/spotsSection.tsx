@@ -30,10 +30,33 @@ export function Spots() {
             {spotsContent.locations.map((s, i) => (
               <span
                 key={i}
-                title={s.name}
-                className="absolute w-3 h-3 bg-[#ffc631] rounded-full -translate-x-1/2 -translate-y-1/2 cursor-pointer before:absolute before:inset-0 before:rounded-full before:bg-[#ffc631]/40 before:scale-[2.5] before:animate-ping"
+                className="group absolute w-3 h-3 bg-[#ffc631] rounded-full 
+                  -translate-x-1/2 -translate-y-1/2 cursor-pointer
+                  before:absolute before:inset-0 before:rounded-full
+                  before:bg-[#ffc631]/40 before:scale-[2.5] before:animate-ping"
                 style={{ left: `${s.x}%`, top: `${s.y}%` }}
-              />
+              >
+                {/* Location name */}
+                <span
+                  className="absolute left-1/2 bottom-full mb-3
+                    -translate-x-1/2
+                    whitespace-nowrap
+                    rounded-md bg-[#1a1a2e] px-3 py-1.5
+                    text-xs font-semibold text-white
+                    opacity-0 scale-95
+                    transition-all duration-200
+                    group-hover:opacity-100
+                    group-hover:scale-100
+                    pointer-events-none
+                    z-10
+                    after:absolute after:left-1/2 after:top-full
+                    after:-translate-x-1/2
+                    after:border-4 after:border-transparent
+                    after:border-t-[#1a1a2e]"
+                >
+                  {s.name}
+                </span>
+              </span>
             ))}
           </div>
         </div>
