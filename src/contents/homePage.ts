@@ -13,14 +13,13 @@ export const heroContent = {
     label: "Our Projects",
     href: "/projects",
   },
+  // Values are counted live in lib/data/stats.ts — only the labels live here.
   counters: {
-    projectsPerYear: {
-      label: "Completed Projects",
-      value: 24,
+    totalProjects: {
+      label: "Projects Undertaken",
     },
-    turnover2020: {
-      label: "Expert Team Members",
-      value: 14,
+    completedProjects: {
+      label: "Completed Projects",
     },
   },
   floatingCard: {
@@ -150,28 +149,36 @@ export const spotsContent = {
   description:
     "Kallisto Engineering Consultancy has delivered planning, design, survey and supervision services across Nepal — from road and bridge projects in Banke and the Terai to hospital design in Kathmandu and wastewater planning in Pokhara. Our multidisciplinary team brings engineering, environmental and social expertise to every project we undertake.",
 
-  stats: [
-    {
-      value: "31+",
+  // Values are counted live in lib/data/stats.ts — only the labels live here.
+  stats: {
+    projectsUndertaken: {
       label: "Projects Undertaken Nationwide",
     },
-    {
-      value: "24",
+    projectsCompleted: {
       label: "Projects Successfully Completed",
     },
-  ],
+  },
 
   cta: {
     label: "About Company",
     href: "/about",
   },
 
-  // Nepal locations (approx positions for map)
+  // Nepal locations — x/y are percentages of the map container in
+  // components/views/home/spotsSection.tsx. Because nepal.png (450x360)
+  // is object-contain inside a 16:9 box, the map itself only spans
+  // 14.8%–85.2% horizontally; the values below already account for that.
+  // Listed west to east.
   locations: [
+    { name: "Bardiya", x: 28.8, y: 52.6 },
     { name: "Banke", x: 30.8, y: 54.2 },
+    { name: "Dang", x: 37.0, y: 56.0 },
+    { name: "Kapilvastu", x: 41.8, y: 62.9 },
+    { name: "Rupandehi", x: 44.6, y: 61.4 },
     { name: "Pokhara", x: 48.9, y: 52.8 },
     { name: "Chitwan", x: 51.7, y: 63.5 },
     { name: "Kathmandu", x: 59.3, y: 60.6 },
+    { name: "Biratnagar", x: 74.8, y: 80.2 },
     { name: "Terhathum", x: 76.4, y: 69.7 },
   ],
 };

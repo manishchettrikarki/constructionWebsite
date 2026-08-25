@@ -2,6 +2,7 @@
 
 import { Subtitle } from "@/components/reusable/subtitle";
 import { SERVICES_CONTENT, STATS } from "@/contents/services";
+import type { SiteStats } from "@/lib/data/stats.types";
 import { StatItem } from "@/utils/statItem";
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
@@ -9,7 +10,7 @@ import { PlayIcon } from "@/icons";
 import { Cap } from "@/animations/cap";
 
 
-export function ServicesNumbersSection() {
+export function ServicesNumbersSection({ stats }: { stats: SiteStats }) {
   const [imgSrc, setImgSrc] = useState("/img/video/03.jpg");
   const [visible, setVisible] = useState(false);
   const ref = useRef<HTMLUListElement | null>(null);
@@ -48,7 +49,12 @@ export function ServicesNumbersSection() {
             {/* Stat counters */}
             <ul ref={ref} className="grid grid-cols-2 gap-8">
               {STATS.map((s, i) => (
-                <StatItem key={i} {...s} start={visible} />
+                <StatItem
+                  key={i}
+                  {...s}
+                  value={s.source ? stats[s.source] : (s.value ?? 0)}
+                  start={visible}
+                />
               ))}
             </ul>
           </div>

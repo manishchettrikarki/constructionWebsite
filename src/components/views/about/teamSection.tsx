@@ -1,8 +1,8 @@
 import { Subtitle } from "@/components/reusable/subtitle";
-import { TEAM_MEMBERS } from "@/contents/aboutPage";
+import type { PublicTeamMember } from "@/lib/data/team";
 
 
-export function AboutTeamSection() {
+export function AboutTeamSection({ members }: { members: PublicTeamMember[] }) {
     return (
         <section className="py-24 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -14,7 +14,7 @@ export function AboutTeamSection() {
                         Behind Every Project
                     </h2>
                     <p className="mt-4 text-gray-500 text-sm leading-relaxed">
-                        A 14-member multidisciplinary team of licensed engineers,
+                        A {members.length}-member multidisciplinary team of licensed engineers,
                         registered surveyors, sociologists, environmental experts and GIS
                         specialists, working together across every stage of a project.
                     </p>
@@ -22,9 +22,9 @@ export function AboutTeamSection() {
 
                 {/* Team grid */}
                 <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-                    {TEAM_MEMBERS.map((member) => (
+                    {members.map((member) => (
                         <div
-                            key={member.name}
+                            key={member.id}
                             className="bg-gray-50 border border-gray-100 hover:border-[#ffc631]/40 hover:shadow-md rounded-2xl p-6 flex flex-col items-center text-center gap-3 transition-all duration-300"
                         >
                             {/* <div className="w-16 h-16 rounded-full bg-[#1a1a2e] text-[#ffc631] flex items-center justify-center font-bold text-lg shrink-0">

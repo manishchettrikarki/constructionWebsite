@@ -7,8 +7,9 @@ import { useCountUp } from "@/hooks/useCountUp";
 import { Subtitle } from "@/components/reusable/subtitle";
 import { heroContent } from "@/contents/homePage";
 import { BuildingConstruction } from "@/animations/constructionBuilding";
+import type { SiteStats } from "@/lib/data/stats.types";
 
-export function Hero() {
+export function Hero({ stats }: { stats: SiteStats }) {
   const [visible, setVisible] = useState(false);
   const [imgSrc, setImgSrc] = useState("/images/building-one.png");
 
@@ -25,8 +26,8 @@ export function Hero() {
     return () => observer.disconnect();
   }, []);
 
-  const count128 = useCountUp(30, 1800, visible);
-  const count4253 = useCountUp(14, 2200, visible);
+  const totalProjects = useCountUp(stats.totalProjects, 1800, visible);
+  const completedProjects = useCountUp(stats.completedProjects, 2200, visible);
 
   return (
     <section className="bg-[#1a1a2e] relative overflow-hidden min-h-[90vh] flex items-center">
@@ -71,20 +72,20 @@ export function Hero() {
             >
               <div>
                 <p className="text-4xl font-extrabold text-white">
-                  {count128}
+                  {totalProjects}
                   <span className="text-[#ffc631]">+</span>
                 </p>
                 <p className="text-xs text-gray-400 mt-1 uppercase tracking-wider">
-                  {heroContent.counters.projectsPerYear.label}
+                  {heroContent.counters.totalProjects.label}
                 </p>
               </div>
               <div className="w-px bg-white/10" />
               <div>
                 <p className="text-4xl font-extrabold text-white">
-                  {count4253.toLocaleString()}
+                  {completedProjects}
                 </p>
                 <p className="text-xs text-gray-400 mt-1 uppercase tracking-wider">
-                  {heroContent.counters.turnover2020.label}
+                  {heroContent.counters.completedProjects.label}
                 </p>
               </div>
             </div>

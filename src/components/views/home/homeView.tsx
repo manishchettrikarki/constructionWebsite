@@ -7,18 +7,26 @@ import { Hero } from "./heroSection";
 import { Projects } from "./projectSection";
 import { Services } from "./servicesSection";
 import { Spots } from "./spotsSection";
+import type { PublicFaq } from "@/lib/data/faqs";
+import type { SiteStats } from "@/lib/data/stats.types";
 // import { Team } from "./teamSection";
 
-export default function HomeView() {
+export default function HomeView({
+  faqs,
+  stats,
+}: {
+  faqs: PublicFaq[];
+  stats: SiteStats;
+}) {
   return (
     <>
-      <Hero />
+      <Hero stats={stats} />
       <Services />
       <Projects />
-      <Spots />
+      <Spots stats={stats} />
       <Features />
       {/* <Team /> */}
-      <FAQ />
+      <FAQ faqs={faqs} />
       {/* <Gallery /> */}
       {/* <Contact /> */}
     </>

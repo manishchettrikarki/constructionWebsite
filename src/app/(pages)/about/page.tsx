@@ -5,6 +5,8 @@ import { AboutQuoteSection } from "@/components/views/about/quoteSection";
 import { AboutReviewsSection } from "@/components/views/about/reviewSection";
 import { AboutServicesSection } from "@/components/views/about/serviceSection";
 import { AboutTeamSection } from "@/components/views/about/teamSection";
+import { getTeamMembers } from "@/lib/data/team";
+import { getTestimonials } from "@/lib/data/testimonials";
 import {
   breadcrumbJsonLd,
   buildMetadata,
@@ -19,7 +21,12 @@ import Script from "next/script";
 export const metadata: Metadata = buildMetadata(PAGE_SEO.about);
 
 //
-export default function AboutPage() {
+export default async function AboutPage() {
+  const [teamMembers, testimonials] = await Promise.all([
+    getTeamMembers(),
+    getTestimonials(),
+  ]);
+
   return (
     <>
       <AboutHero />
@@ -29,8 +36,8 @@ export default function AboutPage() {
       <AboutServicesSection />
       {/* <AboutGallerySection /> */}
       <AboutFeaturesSection />
-      <AboutTeamSection />
-      <AboutReviewsSection />
+      <AboutTeamSection members={teamMembers} />
+      <AboutReviewsSection testimonials={testimonials} />
 
       {/*  */}
       <Script

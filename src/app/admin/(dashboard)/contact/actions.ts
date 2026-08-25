@@ -1,10 +1,10 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { createClient } from "@/lib/supabase/server";
+import { requireAdminClient } from "@/lib/supabase/auth";
 
 export async function updateContactDetails(formData: FormData) {
-  const supabase = await createClient();
+  const supabase = await requireAdminClient();
 
   const values = {
     phone: String(formData.get("phone") ?? "").trim(),

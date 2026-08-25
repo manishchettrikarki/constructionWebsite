@@ -200,5 +200,8 @@ export const COMPANY_INFO = {
   name:"Kallisto Engineering Consultancy",
   phone: "+977-9841666927",
   email: "kallistoengineering@gmail.com",
-  registeredAddress: "Ghattekulo, Maitidevi, Kathmandu, Nepal"
+  registeredAddress: "Ghattekulo, Maitidevi, Kathmandu, Nepal",
+  // 2074 B.S. began in April 2017 AD. Drives the "Years of Excellence
+  // Since Establishment" counter so it never goes stale.
+  establishedYearAD: 2017,
 };

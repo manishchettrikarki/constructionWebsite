@@ -2,7 +2,7 @@
 
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-import { createClient } from "@/lib/supabase/server";
+import { requireAdminClient } from "@/lib/supabase/auth";
 
 function readServiceForm(formData: FormData) {
   return {
@@ -15,7 +15,7 @@ function readServiceForm(formData: FormData) {
 }
 
 export async function createService(formData: FormData) {
-  const supabase = await createClient();
+  const supabase = await requireAdminClient();
   const values = readServiceForm(formData);
 
   if (!values.title) throw new Error("Title is required.");
@@ -30,7 +30,7 @@ export async function createService(formData: FormData) {
 }
 
 export async function updateService(id: string, formData: FormData) {
-  const supabase = await createClient();
+  const supabase = await requireAdminClient();
   const values = readServiceForm(formData);
 
   if (!values.title) throw new Error("Title is required.");
@@ -47,8 +47,8 @@ export async function updateService(id: string, formData: FormData) {
   redirect("/admin/services");
 }
 
-export async function deleteService(id: string, _formData: FormData) {
-  const supabase = await createClient();
+export async function deleteService(id: string) {
+  const supabase = await requireAdminClient();
   const { error } = await supabase.from("services").delete().eq("id", id);
   if (error) throw new Error(error.message);
 

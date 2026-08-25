@@ -1,11 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useActionState } from "react";
+import { useFormStatus } from "react-dom";
 import { Subtitle } from "@/components/reusable/subtitle";
 import { CheckIcon } from "@/icons";
 import { CONTACT_CONTENT, CONTACT_INFO } from "@/contents/contact";
 import type { ContactCard } from "@/contents/contact";
 import type { PublicContactDetails } from "@/types/public";
+import { submitContactMessage } from "@/app/(pages)/contact/actions";
+import { CONTACT_INITIAL_STATE } from "@/app/(pages)/contact/formState";
 
 function telHref(phone: string) {
   return `tel:${phone.replace(/[^\d+]/g, "")}`;
@@ -49,20 +52,10 @@ export function ContactInfoSection({
 }: {
   contact: PublicContactDetails;
 }) {
-  const [form, setForm] = useState({
-    name: "",
-    tel: "",
-    email: "",
-    message: "",
-  });
-  const [sent, setSent] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSent(true);
-    setForm({ name: "", tel: "", email: "", message: "" });
-    setTimeout(() => setSent(false), 4000);
-  };
+  const [state, formAction] = useActionState(
+    submitContactMessage,
+    CONTACT_INITIAL_STATE,
+  );
 
   const inputClass =
     "w-full border border-gray-200 rounded-lg px-4 py-3.5 text-sm text-[#1a1a2e] placeholder-gray-400 focus:outline-none focus:border-[#ffc631] transition-colors bg-white";
@@ -147,56 +140,89 @@ export function ContactInfoSection({
             </p>
           </div>
 
-          {sent && (
+          {state.status === "success" && (
             <div className="flex items-center gap-3 bg-green-50 border border-green-200 text-green-700 rounded-xl px-5 py-4 text-sm font-medium mb-6">
               <CheckIcon className="w-5 h-5 shrink-0" />
-              {CONTACT_CONTENT.successMessage}
+              {state.message || CONTACT_CONTENT.successMessage}
             </div>
           )}
 
-          <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+          {state.status === "error" && (
+            <div className="bg-red-50 border border-red-200 text-red-700 rounded-xl px-5 py-4 text-sm font-medium mb-6">
+              {state.message}
+            </div>
+          )}
+
+          <form
+            action={formAction}
+            key={state.status === "success" ? "sent" : "draft"}
+            className="flex flex-col gap-4"
+          >
+            {/* Honeypot — hidden from people, tempting to bots. */}
+            <input
+              type="text"
+              name="company"
+              tabIndex={-1}
+              autoComplete="off"
+              aria-hidden="true"
+              className="hidden"
+            />
+
             <div className="grid sm:grid-cols-2 gap-4">
               <input
                 type="text"
+                name="name"
                 required
+                maxLength={120}
                 placeholder={CONTACT_CONTENT.placeholderName}
-                value={form.name}
-                onChange={(e) => setForm({ ...form, name: e.target.value })}
                 className={inputClass}
               />
               <input
                 type="tel"
+                name="phone"
+                maxLength={40}
                 placeholder={CONTACT_CONTENT.placeholderPhone}
-                value={form.tel}
-                onChange={(e) => setForm({ ...form, tel: e.target.value })}
                 className={inputClass}
               />
             </div>
             <input
               type="email"
+              name="email"
               required
+              maxLength={200}
               placeholder={CONTACT_CONTENT.placeholderEmail}
-              value={form.email}
-              onChange={(e) => setForm({ ...form, email: e.target.value })}
               className={inputClass}
             />
             <textarea
+              name="message"
               required
               rows={5}
+              maxLength={4000}
               placeholder={CONTACT_CONTENT.placeholderMessage}
-              value={form.message}
-              onChange={(e) => setForm({ ...form, message: e.target.value })}
               className={`${inputClass} resize-none`}
             />
-            <button
-              type="submit"
-              className="self-center sm:self-start bg-[#1a1a2e] hover:bg-[#ffc631] hover:text-[#1a1a2e] text-white font-bold px-10 py-4 rounded-lg transition-colors duration-200"
-            >
-              {CONTACT_CONTENT.submitButton}
-            </button>
+            <SubmitButton />
           </form>
         </div>
       </div>
     </section>
+  );
+}
+
+/**
+ * Lives in its own component because useFormStatus only reports on the
+ * <form> above it in the tree.
+ */
+function SubmitButton() {
+  const { pending } = useFormStatus();
+
+  return (
+    <button
+      type="submit"
+      disabled={pending}
+      className="self-center sm:self-start bg-[#1a1a2e] hover:bg-[#ffc631] hover:text-[#1a1a2e] text-white font-bold px-10 py-4 rounded-lg transition-colors duration-200 disabled:opacity-60 disabled:cursor-not-allowed"
+    >
+      {pending ? "Sending…" : CONTACT_CONTENT.submitButton}
+    </button>
   );
 }

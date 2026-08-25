@@ -1,7 +1,7 @@
 "use client";
 
 import { Subtitle } from "@/components/reusable/subtitle";
-import { REVIEWS } from "@/contents/aboutPage";
+import type { PublicTestimonial } from "@/lib/data/testimonials";
 import { ArrowLeftIcon, ArrowRightIcon } from "@/icons";
 import { getInitials } from "@/utils/getInitials";
 import { StarRating } from "@/utils/starRating";
@@ -9,13 +9,24 @@ import { useState } from "react";
 
 
 // 
-export function AboutReviewsSection() {
+export function AboutReviewsSection({
+  testimonials,
+}: {
+  testimonials: PublicTestimonial[];
+}) {
   const [active, setActive] = useState(0);
 
-  const prev = () => setActive((p) => (p === 0 ? REVIEWS.length - 1 : p - 1));
-  const next = () => setActive((p) => (p === REVIEWS.length - 1 ? 0 : p + 1));
+  const prev = () => setActive((p) => (p === 0 ? testimonials.length - 1 : p - 1));
+  const next = () => setActive((p) => (p === testimonials.length - 1 ? 0 : p + 1));
 
-  const visible = [REVIEWS[active], REVIEWS[(active + 1) % REVIEWS.length]];
+  // The section shows two cards at a time; with a single testimonial that
+  // would render the same card twice, and with none there is nothing to show.
+  const visible =
+    testimonials.length > 1
+      ? [testimonials[active], testimonials[(active + 1) % testimonials.length]]
+      : testimonials;
+
+  if (testimonials.length === 0) return null;
 
   return (
     <section className="py-24 bg-gray-50">
@@ -78,7 +89,7 @@ export function AboutReviewsSection() {
 
         {/* Pagination */}
         <div className="flex justify-center gap-2 mt-10">
-          {REVIEWS.map((_, i) => (
+          {testimonials.map((_, i) => (
             <button
               key={i}
               onClick={() => setActive(i)}

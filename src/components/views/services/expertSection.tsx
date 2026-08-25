@@ -5,11 +5,12 @@ import Image from "next/image";
 import { useState } from "react";
 import { Subtitle } from "@/components/reusable/subtitle";
 import { ACHIEVEMENTS, EXPERTS_CONTENT } from "@/contents/services";
+import { applyStatTokens, type SiteStats } from "@/lib/data/stats.types";
 import { BuildingIcon } from "@/icons";
 import { SolvingProblems } from "@/animations/solvingProblems";
 
 
-export function ServicesExpertsSection() {
+export function ServicesExpertsSection({ stats }: { stats: SiteStats }) {
   const [imgSrc, setImgSrc] = useState("/img/about/02.jpg");
 
   return (
@@ -38,7 +39,7 @@ export function ServicesExpertsSection() {
                       <Icon className="w-10 h-10" />
                     </div>
                     <span className="text-[#1a1a2e] font-semibold text-sm leading-snug">
-                      {item.label}
+                      {applyStatTokens(item.label, stats)}
                     </span>
                   </li>
                 );

@@ -3,10 +3,10 @@ import { SectionLabel } from "@/components/reusable/sectionLabel";
 import { faqContent } from "@/contents/homePage";
 import { MinusIcon } from "@/icons/icons/minus";
 import { PlusIcon } from "@/icons/icons/plus";
-import { faqs } from "@/utils/constant";
+import type { PublicFaq } from "@/lib/data/faqs";
 import { useState } from "react";
 
-export function FAQ() {
+export function FAQ({ faqs }: { faqs: PublicFaq[] }) {
   const [open, setOpen] = useState(0);
   return (
     <section className="py-20 lg:pt-45">
@@ -28,7 +28,7 @@ export function FAQ() {
         {/* Accordion */}
         <div className="flex-1 lg:max-w-185 flex flex-col gap-7">
           {faqs.map((f, i) => (
-            <div key={i}>
+            <div key={f.id}>
               <button
                 onClick={() => setOpen(open === i ? -1 : i)}
                 className={`w-full flex items-center justify-between gap-5 border p-5 md:p-7 text-left transition-colors ${open === i ? "border-[#0da574] border-b-0 text-[#0da574]" : "border-[#c8c8c8]"}`}

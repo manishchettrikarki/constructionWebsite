@@ -1,10 +1,14 @@
 import { ControlIcon, DesignIcon, ProjectCheckIcon } from "@/icons";
+import type { StatSource } from "@/lib/data/stats.types";
 
 // Types
 export interface Stat {
     suffix: string;
-    value: number;
     label: string;
+    /** Counts this figure live from the admin data. Omit for a fixed number. */
+    source?: StatSource;
+    /** Used when `source` is omitted. */
+    value?: number;
     separator?: boolean;
 }
 
@@ -31,18 +35,22 @@ export interface ExpertsContent {
 
 // Data
 export const STATS: Stat[] = [
+    // Deliberately a fixed marketing figure, not derived from the roster.
     { suffix: "+", value: 31, label: "Years of Combined\nIndustry Experience" },
     {
         suffix: "+",
-        value: 30,
+        source: "completedProjects",
         label: "Completed Projects\nSuccessfully Delivered",
     },
-    { suffix: "+", value: 13, label: "Expert Team Members\nAcross Disciplines" },
+    {
+        suffix: "+",
+        source: "teamMembers",
+        label: "Expert Team Members\nAcross Disciplines",
+    },
     {
         suffix: "",
-        value: 5,
+        source: "yearsSinceEstablished",
         label: "Years of Excellence\nSince Establishment",
-        separator: true,
     },
 ];
 
@@ -56,7 +64,8 @@ export const SERVICES_CONTENT: ServicesContent = {
 
 export const ACHIEVEMENTS: Achievement[] = [
     {
-        label: "30+ Successfully Completed Projects",
+        // {completedProjects} is substituted by applyStatTokens().
+        label: "{completedProjects}+ Successfully Completed Projects",
         icon: ProjectCheckIcon,
     },
     {

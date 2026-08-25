@@ -44,6 +44,47 @@ export interface ContactDetailsRow {
   updated_at: string;
 }
 
+export interface FaqRow {
+  id: string;
+  question: string;
+  answer: string;
+  sort_order: number;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface TeamMemberRow {
+  id: string;
+  name: string;
+  position: string;
+  qualification: string;
+  experience: string;
+  sort_order: number;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface TestimonialRow {
+  id: string;
+  name: string;
+  role: string;
+  quote: string;
+  rating: number;
+  sort_order: number;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface ContactMessageRow {
+  id: string;
+  name: string;
+  email: string;
+  phone: string;
+  message: string;
+  is_read: boolean;
+  created_at: string;
+}
+
 export interface Database {
   public: {
     Tables: {
@@ -63,6 +104,32 @@ export interface Database {
         Row: ContactDetailsRow;
         Insert: Partial<ContactDetailsRow> & { id?: string };
         Update: Partial<ContactDetailsRow>;
+      };
+      faqs: {
+        Row: FaqRow;
+        Insert: Partial<FaqRow> &
+          Pick<FaqRow, "question" | "answer"> & { id?: string };
+        Update: Partial<FaqRow>;
+      };
+      team_members: {
+        Row: TeamMemberRow;
+        Insert: Partial<TeamMemberRow> &
+          Pick<TeamMemberRow, "name"> & { id?: string };
+        Update: Partial<TeamMemberRow>;
+      };
+      testimonials: {
+        Row: TestimonialRow;
+        Insert: Partial<TestimonialRow> &
+          Pick<TestimonialRow, "name" | "quote"> & { id?: string };
+        Update: Partial<TestimonialRow>;
+      };
+      contact_messages: {
+        Row: ContactMessageRow;
+        Insert: Partial<ContactMessageRow> &
+          Pick<ContactMessageRow, "name" | "email" | "message"> & {
+            id?: string;
+          };
+        Update: Partial<ContactMessageRow>;
       };
     };
   };

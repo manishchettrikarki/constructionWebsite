@@ -5,10 +5,23 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import { footerContent } from "@/contents/footer";
 
+/**
+ * `redirectedFrom` comes straight from the URL, so it can't be trusted —
+ * only same-site /admin paths are allowed through. Anything else (an
+ * absolute URL, a protocol-relative "//evil.com", or the login page
+ * itself) falls back to the dashboard.
+ */
+function safeRedirect(target: string | null): string {
+  if (!target) return "/admin";
+  if (!/^\/admin(?:\/|$)/.test(target)) return "/admin";
+  if (target === "/admin/login") return "/admin";
+  return target;
+}
+
 function LoginForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const redirectedFrom = searchParams.get("redirectedFrom") || "/admin";
+  const redirectedFrom = safeRedirect(searchParams.get("redirectedFrom"));
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

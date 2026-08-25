@@ -6,17 +6,20 @@ import {
   PAGE_SEO,
   webPageJsonLd,
 } from "@/lib/seo";
-import { faqs } from "@/utils/constant";
+import { getFaqs } from "@/lib/data/faqs";
+import { getSiteStats } from "@/lib/data/stats";
 import { Metadata } from "next";
 import Script from "next/script";
 
 export const metadata: Metadata = buildMetadata(PAGE_SEO.home);
 
 //
-export default function HomePage() {
+export default async function HomePage() {
+  const [faqs, stats] = await Promise.all([getFaqs(), getSiteStats()]);
+
   return (
     <div className="font-[Roboto,sans-serif] text-[#000810] bg-white overflow-x-hidden">
-      <HomeView />
+      <HomeView faqs={faqs} stats={stats} />
       <Script
         id="json-ld-homepage"
         type="application/ld+json"

@@ -2,8 +2,9 @@ import Image from "next/image";
 import { Btn } from "@/components/reusable/button";
 import { SectionLabel } from "@/components/reusable/sectionLabel";
 import { spotsContent } from "@/contents/homePage";
+import type { SiteStats } from "@/lib/data/stats.types";
 
-export function Spots() {
+export function Spots({ stats }: { stats: SiteStats }) {
   return (
     <section className="py-20 lg:py-45">
       <div className="max-w-322.5 mx-auto px-5 flex flex-col lg:flex-row gap-10 lg:gap-10">
@@ -69,18 +70,19 @@ export function Spots() {
           <div className="flex gap-10 mb-10">
             <div>
               <div className="text-6xl lg:text-7xl font-black text-[#0da574] font-['Archivo',sans-serif] leading-none">
-                {spotsContent.stats[0].value}
+                {stats.totalProjects}
+                <span className="text-[#ffc631]">+</span>
               </div>
               <div className="text-sm font-bold mt-2">
-                {spotsContent.stats[0].label}
+                {spotsContent.stats.projectsUndertaken.label}
               </div>
             </div>
             <div>
               <div className="text-6xl lg:text-7xl font-black text-[#0da574] font-['Archivo',sans-serif] leading-none">
-                {spotsContent.stats[1].value}
+                {stats.completedProjects}
               </div>
               <div className="text-sm font-bold mt-2">
-                {spotsContent.stats[1].label}
+                {spotsContent.stats.projectsCompleted.label}
               </div>
             </div>
           </div>
